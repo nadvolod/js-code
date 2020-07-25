@@ -13,5 +13,7 @@ function expect(actual){
               throw new Error(`${actual} is not equal to ${expected}`);
             }
         }
+        //We can add other functions here as well
+        toEqual(expected){},
     }
 }
