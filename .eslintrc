@@ -6,7 +6,8 @@
       "jsx": true
     }
   },
-  "rules": {
-    "valid-typeof": "error"
+  "extends": ["eslint:recommended"],
+  "env": {
+    "browser": true
   }
 }
