@@ -11,8 +11,9 @@ yarn-error.log*
 # virtual machine crash logs
 hs_err_pid*
 
-# node_modules
+# node
 **/node_modules
+dist
 
 # Optional npm cache directory
 **/.npm
