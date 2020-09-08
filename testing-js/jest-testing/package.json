@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^26.4.2"
+    "@jest/environment": "^26.3.0",
+    "jest": "^26.4.2",
+    "lodash": "^4.17.20"
   }
 }
