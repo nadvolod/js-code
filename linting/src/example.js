@@ -1,8 +1,9 @@
 const username = 'freddy'
-typeof username === 'string'
+typeof username === 'strng'
+let undefined;
 
 if (!('serviceWorker' in navigator)) {
-  // you have an old browser :-(
+    // you have an old browser :-(
 }
 
 const greeting = 'hello'
