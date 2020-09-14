@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^26.4.2"
+    "axios": "^0.20.0",
+    "jest": "^26.4.2",
+    "lodash": "^4.17.20"
   }
 }
