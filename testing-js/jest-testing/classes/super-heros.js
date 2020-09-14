@@ -1,6 +1,6 @@
 const superHeros = [
     {name: 'Dynaguy', powers: ['disintegration ray', 'fly']},
-    {name: 'Dash', powers: ['speed']},
+    {name: 'Dash', powers: ['speed']}
 ]
 
 function getFlyingSuperHeros() {
