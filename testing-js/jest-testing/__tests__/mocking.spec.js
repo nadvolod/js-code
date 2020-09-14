@@ -1,5 +1,5 @@
 const lodash = require('lodash')
-const {Users} = require('../classes/')
+const {Users} = require('../classes/users')
 const axios = require('axios')
 
 //Mock a single call
