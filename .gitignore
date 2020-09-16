@@ -25,4 +25,3 @@ hs_err_pid*
 .tmp/
 tests_output/
 **/apps
-/package-lock.json
