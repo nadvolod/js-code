@@ -26,3 +26,6 @@ hs_err_pid*
 tests_output/
 **/apps
 /package-lock.json
+
+#Cypress
+/testing-js/cypress/my-app/cypress/videos/
