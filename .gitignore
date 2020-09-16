@@ -25,4 +25,3 @@ hs_err_pid*
 .tmp/
 tests_output/
 **/apps
-/testing-js/cypress-tests/package-lock.json
