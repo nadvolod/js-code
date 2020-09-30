@@ -1,9 +1,13 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const dotenv = require('dotenv')
+
+//needed to set our environment variables that are coming from .env file
+dotenv.config();
 
 mongoose.connect(
-    'mongodb+srv://nikolay1:Test12345@cluster0.azx4b.mongodb.net/test?retryWrites=true&w=majority',
+    process.env.DB_CONNECT,
     { useNewUrlParser: true },
     ()=> console.log('Connected to db!'))
 
