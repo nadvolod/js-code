@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/nadvolod/js-code/issues"
   },
-  "homepage": "https://github.com/nadvolod/js-code#readme"
+  "homepage": "https://github.com/nadvolod/js-code#readme",
+  "devDependencies": {
+    "lodash": "^4.17.20"
+  }
 }

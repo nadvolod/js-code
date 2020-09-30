@@ -1,5 +1,5 @@
 {
-  "name": "jest-testing",
+  "name": "cypress-testing",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,10 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "axios": "^0.20.0",
-    "jest": "^26.4.2",
-    "lodash": "^4.17.20",
-    "prettier": "^2.1.2"
+  "dependencies": {
+    "cypress": "^5.2.0"
   }
 }
