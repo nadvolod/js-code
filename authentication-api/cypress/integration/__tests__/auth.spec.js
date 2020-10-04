@@ -15,51 +15,36 @@
 // })
 
 describe('/user/register', ()=>{
+    let validUser = {
+        name: 'test',
+        email: 'test@test.com',
+        password: 'Test123'
+    }
+
     it('returns 200 for valid request', ()=>{
-        let body = {
-            name: 'test',
-            email: 'test@test.com',
-            password: 'Test123'
-        }
-        cy.request('POST', 'http://localhost:3001/api/user/register', body)
+        cy.request('POST', 'http://localhost:3001/api/user/register', validUser)
             .then((response)=>{
                 expect(response.status).to.eq(200)
             })
     })
 
-    it('/POST valid user returns correct name', ()=>{
-        let body = {
-            name: 'test',
-            email: 'test@test.com',
-            password: 'Test123'
-        }
-        cy.request('POST', 'http://localhost:3001/api/user/register', body)
+    it('POST with valid user returns correct name', ()=>{
+        cy.request('POST', 'http://localhost:3001/api/user/register', validUser)
             .then((response)=>{
                 expect(response.body.name).to.eq('test')
             })
     })
 
-    it('/POST valid user returns correct email', ()=>{
-        let body = {
-            name: 'test',
-            email: 'test@test.com',
-            password: 'Test123'
-        }
-        cy.request('POST', 'http://localhost:3001/api/user/register', body)
+    it('POST with valid user returns correct email', ()=>{
+        cy.request('POST', 'http://localhost:3001/api/user/register', validUser)
             .then((response)=>{
                 expect(response.body.email).to.eq('test@test.com')
             })
     })
-    it('/POST valid user returns correct email', ()=>{
-        let body = {
-            name: 'test',
-            email: 'test@test.com',
-            password: 'Test123'
-        }
-        cy.request('POST', 'http://localhost:3001/api/user/register', body)
+    it('POST with valid user returns correct password', ()=>{
+        cy.request('POST', 'http://localhost:3001/api/user/register', validUser)
             .then((response)=>{
                 expect(response.body.password).to.eq('Test123')
             })
     })
-
 })
