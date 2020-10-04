@@ -1,13 +1,6 @@
 const router = require('express').Router();
 const User = require('../model/Users');
-
-//adding validation
-const Joi = require('@hapi/joi');
-const schema = Joi.object({
-    name: Joi.string().min(6).required(),
-    email: Joi.string().min(6).required().email(),
-    password: Joi.string().min(6).required()
-})
+const {registerValidation} = require('../validation');
 
 //final url will be host/api/user/register
 //coming from app.use('/api/user', authRoute); in index.js
@@ -17,7 +10,7 @@ router.post('/register', async(req,res) => {
     //const validation = Joi.validate(req.body, schema);
 
     //this will return only the error part instead of the entire object
-    const {error} = schema.validate(req.body);
+    const {error} = registerValidation(req.body);
     //sends response back with the error message
     //res.send(error.details[0].message);
 
