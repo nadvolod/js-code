@@ -13,7 +13,8 @@
     "nodemon": "^2.0.4"
   },
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "test": "cypress run"
   },
   "keywords": [],
   "author": "",
