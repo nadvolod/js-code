@@ -4,7 +4,8 @@ const Joi = require('@hapi/joi');
 context('validation.js', ()=>{
     it('calls Joi', () => {
         const request = '';
-        cy.spy(Joi, 'object')
+        cy.spy(Joi.object, 'validate')
         Validation.registerValidation(request)
+        expect(Joi.object.validate).to.be.called
     });
 })

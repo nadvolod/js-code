@@ -4,7 +4,7 @@ describe('/user/register', ()=>{
         email: 'test@test.com',
         password: 'Test123'
     }
-    let boundaryValueUser = {
+    let negativeUser = {
         name: '12345',
         email: 'notAnEmail',
         password: 'abcde'
@@ -42,7 +42,7 @@ describe('/user/register', ()=>{
             method: 'POST',
             url: registerEndpoint,
             failOnStatusCode: false,
-            body: boundaryValueUser
+            body: negativeUser
         }).then((response)=>{
                 expect(response.status).to.eq(400)
             })
@@ -52,37 +52,31 @@ describe('/user/register', ()=>{
             method: 'POST',
             url: registerEndpoint,
             failOnStatusCode: false,
-            body: boundaryValueUser
+            body: negativeUser
         }).then((response)=>{
             expect(response.body).to.eq(`"name" length must be at least 6 characters long`)
         })
     })
-    it('POST with not an email shows error message', ()=>{
-        let boundaryValueUser = {
-            name: 'Nikolay',
-            email: 'notAnEmail',
-            password: 'Abc1234'
-        }
+    it('POST with invalid email shows error message', ()=>{
+        negativeUser.name = 'firstName';
         cy.request({
             method: 'POST',
             url: registerEndpoint,
             failOnStatusCode: false,
-            body: boundaryValueUser
+            body: negativeUser
         }).then((response)=>{
             expect(response.body).to.eq(`"email" must be a valid email`)
         })
     })
     it('POST with short password shows error message', ()=>{
-        let boundaryValueUser = {
-            name: 'Nikolay',
-            email: 'nikolay@gmail.com',
-            password: '1'
-        }
+        negativeUser.password = '1';
+        negativeUser.name = 'validName';
+        negativeUser.email = 'valid@email.com';
         cy.request({
             method: 'POST',
             url: registerEndpoint,
             failOnStatusCode: false,
-            body: boundaryValueUser
+            body: negativeUser
         }).then((response)=>{
             expect(response.body).to.eq(`"password" length must be at least 6 characters long`)
         })
