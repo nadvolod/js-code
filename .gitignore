@@ -28,3 +28,6 @@ tests_output/
 **/apps
 **/videos/
 /authentication-api/cypress/screenshots/
+
+#environment variables
+**/.env

@@ -2,6 +2,7 @@ const router = require('express').Router();
 const User = require('../model/Users');
 const {Validation} = require('../validation');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 //final url will be host/api/user/register
 //coming from app.use('/api/user', authRoute); in index.js
@@ -51,7 +52,12 @@ router.post('/login', async(req,res) => {
     const validPassword = await bcrypt.compare(req.body.password, user.password);
     if(!validPassword) return res.status(400).send('Invalid password');
 
-    res.status(200).send('Logged in');
+    //create and assign a token
+    //1. get back a token when we login
+    //2. go to https://jwt.io/ to decode the token
+    //Now we can use this token for the logged in user session
+    const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
+    res.header('auth-token', token).status(200).send(token);
 });
 
 
