@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv')
 //Import Routes
 const authRoute = require('./routes/auth');
+const postRoute = require('./routes/posts');
 
 //needed to set our environment variables that are coming from .env file
 dotenv.config();
@@ -18,5 +19,6 @@ mongoose.connect(
 app.use(express.json());
 //Route middleware
 app.use('/api/user', authRoute);
+app.use('/api/posts', postRoute);
 
 app.listen(3001, ()=> console.log('Server is running'))
