@@ -7,6 +7,7 @@
     "@hapi/joi": "^17.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "guid": "0.0.12",
     "mongoose": "^5.10.7"
   },
   "devDependencies": {

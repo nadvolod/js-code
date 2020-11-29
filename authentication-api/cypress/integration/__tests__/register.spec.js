@@ -1,15 +1,21 @@
+const Guid = require('guid');
+
 describe('/user/register', ()=>{
-    let validUser = {
-        name: 'Nikolay',
-        email: 'test@test.com',
-        password: 'Test123'
-    }
+    let validUser = {}
     let negativeUser = {
         name: '12345',
         email: 'notAnEmail',
         password: 'abcde'
     }
     const registerEndpoint = 'http://localhost:3001/api/user/register';
+
+    beforeEach(() => {
+        validUser = {
+            name: 'Nikolay',
+            email: Guid.raw() + '@test.com',
+            password: 'Test123'
+        }
+    })
 
     it('returns 200 for valid request', ()=>{
         cy.request('POST', registerEndpoint, validUser)
@@ -25,13 +31,13 @@ describe('/user/register', ()=>{
             })
     })
 
-    it('POST with valid user returns correct email', ()=>{
+    it('with valid user returns correct email', ()=>{
         cy.request('POST', registerEndpoint, validUser)
             .then((response)=>{
-                expect(response.body.email).to.eq('test@test.com')
+                expect(response.body.email).to.eq(validUser.email)
             })
     })
-    it('POST with valid user returns correct password', ()=>{
+    it('with valid user returns correct password', ()=>{
         cy.request('POST', registerEndpoint, validUser)
             .then((response)=>{
                 expect(response.body.password).to.eq('Test123')
