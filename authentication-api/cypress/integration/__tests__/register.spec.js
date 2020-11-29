@@ -24,7 +24,7 @@ describe('/user/register', ()=>{
             })
     })
 
-    it('POST with valid user returns correct name', ()=>{
+    it('with valid user returns correct name', ()=>{
         cy.request('POST', registerEndpoint, validUser)
             .then((response)=>{
                 expect(response.body.name).to.eq('Nikolay')
@@ -37,13 +37,15 @@ describe('/user/register', ()=>{
                 expect(response.body.email).to.eq(validUser.email)
             })
     })
-    it('with valid user returns correct password', ()=>{
+
+    it('with valid user hashes the password', ()=>{
         cy.request('POST', registerEndpoint, validUser)
             .then((response)=>{
-                expect(response.body.password).to.eq('Test123')
+                expect(response.body.password).to.not.eq(validUser.email)
             })
     })
-    it('POST with bad user throws 400', ()=>{
+
+    it('with bad user throws 400', ()=>{
         cy.request({
             method: 'POST',
             url: registerEndpoint,
@@ -53,7 +55,7 @@ describe('/user/register', ()=>{
                 expect(response.status).to.eq(400)
             })
     })
-    it('POST with short name shows error message', ()=>{
+    it('with short name shows error message', ()=>{
         cy.request({
             method: 'POST',
             url: registerEndpoint,
@@ -63,7 +65,7 @@ describe('/user/register', ()=>{
             expect(response.body).to.eq(`"name" length must be at least 6 characters long`)
         })
     })
-    it('POST with invalid email shows error message', ()=>{
+    it('with invalid email shows error message', ()=>{
         negativeUser.name = 'firstName';
         cy.request({
             method: 'POST',
@@ -74,7 +76,7 @@ describe('/user/register', ()=>{
             expect(response.body).to.eq(`"email" must be a valid email`)
         })
     })
-    it('POST with short password shows error message', ()=>{
+    it('with short password shows error message', ()=>{
         negativeUser.password = '1';
         negativeUser.name = 'validName';
         negativeUser.email = 'valid@email.com';
