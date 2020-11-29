@@ -38,4 +38,21 @@ router.post('/register', async(req,res) => {
     }
 });
 
+//Login
+router.post('/login', async(req,res) => {
+    //this will return only the error part instead of the entire object
+    const {error} = Validation.loginValidation(req.body);
+    if(error) return res.status(400).send(error.details[0].message);
+
+    //check if the email exists
+    const user = await User.findOne({email: req.body.email });
+    if(!user) return res.status(400).send('Email not found');
+
+    const validPassword = await bcrypt.compare(req.body.password, user.password);
+    if(!validPassword) return res.status(400).send('Invalid password');
+
+    res.status(200).send('Logged in');
+});
+
+
 module.exports = router;
