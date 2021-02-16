@@ -1,0 +1,4 @@
+*.env
+/cypress/screenshots/
+../authentication-api/*
+../cypress/*
