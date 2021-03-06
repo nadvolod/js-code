@@ -38,9 +38,9 @@ it("changes value when clicked", () => {
 });
 
 it("dispatches correct number of events", () => {
-    const onChange = jest.fn();
+    const mockedOnChange = jest.fn();
     act(() => {
-      render(<Toggle onChange={onChange} />, container);
+      render(<Toggle onChange={mockedOnChange} />, container);
     });
   
     // get ahold of the button element, and trigger some clicks on it
@@ -53,7 +53,7 @@ it("dispatches correct number of events", () => {
       }
     });
   
-    expect(onChange).toHaveBeenCalledTimes(5);
+    expect(mockedOnChange).toHaveBeenCalledTimes(5);
     expect(button.innerHTML).toBe("Turn off");
   });
 
