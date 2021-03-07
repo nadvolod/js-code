@@ -3,7 +3,7 @@ import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 import { fireEvent,getByTestId } from '@testing-library/react'
-import Toggle from "../components/toggle";
+import Toggle from "../components/Toggle";
 
 let container = null;
 beforeEach(() => {
