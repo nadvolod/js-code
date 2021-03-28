@@ -1,6 +1,6 @@
 import React from 'react';
 import { act } from "react-dom/test-utils";
-import {FavoriteNumber} from '../components/favorite-number';
+import {FavoriteNumber} from '../components/function-component/favorite-number';
 import { render, unmountComponentAtNode } from "react-dom";
 
 let container = null;
