@@ -1,10 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 import Hello from './components/function-component/Hello'
+import Toggle from './components/function-component/Toggle'
 
 function App() {
   return (
-    <Hello name={'nikolay'}/>
+    <div>
+      <Hello name={'nikolay'}/>
+      <Toggle />
+    </div>
   );
 }
 
