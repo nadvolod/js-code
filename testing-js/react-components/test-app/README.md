@@ -1,3 +1,24 @@
+# React component tests
+
+In this repo we test react components with component tests.
+
+## How to get started
+
+```bash
+npm run start
+npm run test
+```
+
+If you want to view your function components in an actual browser then you can simply plug them into `App.js` like so
+
+```js
+    <div>
+      <Hello name={'nikolay'}/>
+      <Toggle />
+    </div>
+```
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
