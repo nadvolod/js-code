@@ -10,8 +10,8 @@ function App() {
     <div>
       <button 
         style={{backgroundColor: buttonColor}}
-        onClick={() => setButtonColor(newButtonColor)}
-        >Change to {newButtonColor} 
+        onClick={() => setButtonColor(newButtonColor)}>
+          Change to {newButtonColor} 
       </button>
       <Hello name={'nikolay'}/>
       <Toggle />
