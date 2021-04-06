@@ -2,6 +2,11 @@
 
 In this repo we test react components with component tests.
 
+## TOC
+
+1. [Test a button](src/Button.test.js)
+2. [Test checkbox](src/Checkbox.test.js)
+
 ## How to get started
 
 ```bash

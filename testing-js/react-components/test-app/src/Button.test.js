@@ -1,8 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import App from './App';
+import Button from './components/function-component/Button';
 
 test('should start in red state', () => {
-  render(<App />);
+  render(<Button />);
   //find an element with a role of button and text
   const button = screen.getByRole('button', {name: 'Change to blue'})
   //expect the background color to be red
@@ -10,7 +10,7 @@ test('should start in red state', () => {
 });
 
 test('should change color to blue on click', () => {
-  render(<App />);
+  render(<Button />);
   //find an element with a role of button and text
   const button = screen.getByRole('button', {name: 'Change to blue'})
   //click button
