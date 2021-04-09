@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <button 
-        style={{backgroundColor: buttonColor, color: 'white'}}
+        style={{backgroundColor: (disabled ? 'gray' : buttonColor), color: 'white'}}
         onClick={() => setButtonColor(newButtonColor)}
         //should start out as false since it's set above in useState(false)
         disabled={disabled}
@@ -19,7 +19,7 @@ function App() {
       </button>
       <input 
         type="checkbox" 
-        id="enable-button-checkbox"
+        id="disable-button-checkbox"
         // default checked value is coming from `disabled` property
         defaultChecked={disabled}
         // simply for accessiblity
@@ -27,6 +27,7 @@ function App() {
         // take the event and setDisabled() to the `checked` attributed of the event target aka <input>
         onChange={(e) => setDisabled(e.target.checked)}
       />
+      <label htmlFor="disable-button-checkbox">Disable button</label>
       <Hello name={'nikolay'}/>
       <Toggle />
     </div>

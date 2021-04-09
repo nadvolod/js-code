@@ -24,5 +24,4 @@ test('renders a number input with a label', ()=> {
     act(() => {
         render(<FavoriteNumber />, container);
       });
-    console.log(container.innerHTML);
 })
