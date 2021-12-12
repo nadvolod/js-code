@@ -3,31 +3,50 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 class Square extends React.Component {
-  constructor(props) {
-    //In JavaScript classes, you need to always call super
-    super(props);
-    //To “remember” things, components use state
-    this.state = {
-      value: null,
-    };
-  }
   render() {
     return (
-      <button
-        className="square"
-        onClick={() => {
-          this.setState({ value: "X" });
-        }}
-      >
-        {this.state.value}
+      <button className="square" onClick={() => this.props.onClick()}>
+        {this.props.value}
       </button>
     );
   }
 }
 
+/**
+ * the best approach is to store the game’s state in the parent Board
+ * component instead of in each Square.
+ * The Board component can tell each Square what to display
+ * by passing a prop
+ * To collect data from multiple children,
+ * or to have two child components communicate with each other,
+ * you need to declare the shared state in their parent component instead.
+ *  The parent component can pass the state back down to the children
+ * by using props;
+ * this keeps the child components in sync with each other
+ * and with the parent component.
+ */
 class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      squares: Array(9).fill(null),
+    };
+  }
+  handleClick(i) {
+    const squares = this.state.squares.slice();
+    squares[i] = "X";
+    this.setState({ squares: squares });
+  }
   renderSquare(i) {
-    return <Square value={i} />;
+    return (
+      // Now we’re passing down two props from Board to Square:
+      // value and onClick.
+      // The onClick prop is a function that Square can call when clicked.
+      <Square
+        value={this.state.squares[i]}
+        onClick={() => this.handleClick(i)}
+      />
+    );
   }
 
   //The render method returns a description of what you want to see on the screen
