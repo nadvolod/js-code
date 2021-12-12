@@ -4,15 +4,16 @@ import "./index.css";
 
 class Square extends React.Component {
   render() {
-    return <button className="square">{/* TODO */}</button>;
+    return <button className="square">{this.props.value}</button>;
   }
 }
 
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square />;
+    return <Square value={i} />;
   }
 
+  //The render method returns a description of what you want to see on the screen
   render() {
     const status = "Next player: X";
 
