@@ -6,7 +6,11 @@ function Square(props) {
   //no more render()
   return (
     //no more this.props and no more ()=> onClick(), instead onClick
-    <button className="square" onClick={props.onClick}>
+    <button
+      data-testid={props.testid}
+      className="square"
+      onClick={props.onClick}
+    >
       {props.value}
     </button>
   );
@@ -49,6 +53,7 @@ class Board extends React.Component {
       <Square
         value={this.state.squares[i]}
         onClick={() => this.handleClick(i)}
+        testid={i}
       />
     );
   }
