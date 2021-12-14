@@ -92,6 +92,8 @@ class Game extends React.Component {
       <div className="game">
         <div className="game-board">
           <Board />
+          <p>Built, tested, and deployed with ❤️ by Nikolay Advolodkin</p>
+          <a href="http://ultimateqa.com">ultimateqa</a>
         </div>
         <div className="game-info">
           <div>{/* status */}</div>
