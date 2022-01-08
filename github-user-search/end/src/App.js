@@ -1,6 +1,6 @@
-import React from 'react';
-import { Dashboard, Login, PrivateRoute, AuthWrapper, Error } from './pages';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React from "react";
+import { Dashboard, Login, PrivateRoute, AuthWrapper, Error } from "./pages";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -15,20 +15,13 @@ function App() {
 
     //<Switch> will render the first component that is found
     //and not rendering the Error page on every Route
-    <Router>
-      <Switch>
-        <Route path="/" exact={true}>
-          <Dashboard></Dashboard>
-
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="*">
-          <Error></Error>
-        </Route>
-      </Switch >
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" exact={true} element={<Dashboard />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="*" element={<Error />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

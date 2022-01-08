@@ -1,14 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { GithubContext } from "../context/context";
-import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from "./Charts";
 const Repos = () => {
   const { repos } = React.useContext(GithubContext);
   return (
     <section className="section">
-      <Wrapper className="section-center">
-        <ExampleChart></ExampleChart>
-      </Wrapper>
+      <Wrapper className="section-center"></Wrapper>
     </section>
   );
 };
