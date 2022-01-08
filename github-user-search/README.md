@@ -1,14 +1,27 @@
+# Github User Search ReactJS App
+
+**🥗 Like my content? [Buy me a salad](https://www.buymeacoffee.com/nikolaya)**
+
 ## Getting Started
 
 1. Install node 14 LTS
 2. Install create-react-app `npm install -g create-react-app`
 
+View finished project👇
+
 ```bash
-cd 24-github-users
+cd github-user-search/end
 npm i && npm start
 ```
 
-## Starter Project
+Practice in Starter Project👇
+
+```bash
+cd github-user-search/start
+npm i && npm start
+```
+
+## Starter Project in Start folder
 
 - css provided (global styles, styled components)
 - folders/files already setup
@@ -148,3 +161,7 @@ package.json
    1. How do we test that it looks correct?
    2. How do we test that a search correctly updates the in remaining?
    3. How do we test that having 0 remaining requests will hide the button?
+
+## Inspiration
+
+Huge thanks to [John Smilga for the inspiration](https://github.com/john-smilga/starter-project-react-github-search-users)
