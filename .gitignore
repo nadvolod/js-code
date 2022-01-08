@@ -28,3 +28,4 @@ tests_output/
 **/apps
 **/videos/
 **/cypress/screenshots/**
+**/build/**
