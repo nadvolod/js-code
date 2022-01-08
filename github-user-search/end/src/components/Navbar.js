@@ -1,36 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { useAuth0 } from "@auth0/auth0-react";
+import React from 'react';
+import styled from 'styled-components';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Navbar = () => {
-  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
-  const isLoggedIn = isAuthenticated && user;
-
-  return (
-    <Wrapper>
-      {/* 
-      It works because in JavaScript, true && expression always evaluates to expression, 
-      and false && expression always evaluates to false.
-      */}
-      {isLoggedIn && user.picture && (
-        <>
-          <img src={user.picture} alt={user.name}></img>
-          <h4>Welcome {user.name}</h4>
-        </>
-      )}
-      {isLoggedIn ? (
-        <button
-          onClick={() => {
-            logout({ returnTo: window.location.origin });
-          }}
-        >
-          logout
-        </button>
-      ) : (
-        <button onClick={() => loginWithRedirect()}>login</button>
-      )}
-    </Wrapper>
-  );
+  return <h2>navbar component</h2>;
 };
 
 const Wrapper = styled.nav`

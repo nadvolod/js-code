@@ -39,9 +39,7 @@ const Search = () => {
               }}
             ></input>
             {requests > 0 && !isLoading && (
-              <button data-testid="search" type="submit">
-                search
-              </button>
+              <button type="submit">search</button>
             )}
           </div>
         </form>
