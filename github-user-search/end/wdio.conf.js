@@ -59,7 +59,7 @@ exports.config = {
   // Test Configurations
   // ===================
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: "info",
+  logLevel: "error",
   bail: 0,
   baseUrl: "http://localhost:3000",
   waitforTimeout: 10000,

@@ -27,10 +27,11 @@ const Search = () => {
   return (
     <section className="section">
       <Wrapper className="section-center">
-        <form data-testid="search-form" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className="form-control">
             <MdSearch></MdSearch>
             <input
+              data-testid="search-input"
               type="text"
               placeholder="enter github user"
               value={user}
@@ -39,11 +40,16 @@ const Search = () => {
               }}
             ></input>
             {requests > 0 && !isLoading && (
-              <button type="submit">search</button>
+              <button data-testid="search-button" type="submit">
+                search
+              </button>
             )}
           </div>
         </form>
-        <h3>requests: {requests}/60</h3>
+        <div>
+          <h3>requests </h3>
+          <h3 data-testid="requests-counter">{requests}/60</h3>
+        </div>
       </Wrapper>
     </section>
   );
