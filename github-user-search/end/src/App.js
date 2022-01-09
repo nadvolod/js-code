@@ -1,5 +1,5 @@
 import React from "react";
-import { Dashboard, Login, PrivateRoute, AuthWrapper, Error } from "./pages";
+import { Dashboard, Login, Error } from "./pages";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -12,9 +12,6 @@ function App() {
 
     //exact={true} tells Dashboard to only appear on
     // localhost/ and not on localhost/*
-
-    //<Switch> will render the first component that is found
-    //and not rendering the Error page on every Route
     <BrowserRouter>
       <Routes>
         <Route path="/" exact={true} element={<Dashboard />}></Route>

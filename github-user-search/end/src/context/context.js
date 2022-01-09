@@ -34,14 +34,21 @@ const GithubProvider = ({ children }) => {
       setGithubUser(response.data);
       // the `login, followers_url` objects are actually properties of the response.data json object
       const { login, followers_url } = response.data;
-      //repos
-      axios
-        .get(`${rootUrl}/users/${login}/repos`)
-        .then((response) => setRepos(response.data));
-      //followers
-      axios
-        .get(`${followers_url}?per_page=100`)
-        .then((response) => setFollowers(response.data));
+      await Promise.allSettled([
+        axios(`${rootUrl}/users/${login}/repos?per_page=100`),
+        axios(`${followers_url}?per_page=100`),
+      ])
+        .then((results) => {
+          const [repos, followers] = results;
+          const status = "fulfilled";
+          if (repos.status === status) {
+            setRepos(repos.value.data);
+          }
+          if (followers.status === status) {
+            setFollowers(followers.value.data);
+          }
+        })
+        .catch((err) => console.log(err));
     } else {
       console.log("no such user");
     }
