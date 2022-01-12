@@ -20,7 +20,7 @@
         "build": "CI= react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "wdio": "wdio run wdio.conf.js"
+        "test:visual": "wdio run wdio.conf.js"
     },
     "eslintConfig": {
         "extends": "react-app"
