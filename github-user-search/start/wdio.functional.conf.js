@@ -1,11 +1,3 @@
-const visualOptions = {
-    apiKey: process.env.SCREENER_API_KEY,
-    projectName: 'github-users-search',
-};
-const sauceOptions = {
-    username: process.env.SAUCE_USERNAME,
-    accesskey: process.env.SAUCE_ACCESS_KEY,
-};
 exports.config = {
     region: process.env.REGION || 'us',
     services: [
@@ -19,43 +11,26 @@ exports.config = {
             },
         ],
     ],
-    specs: ['./test/specs/**/*.js'],
+    specs: ['./test/specs/**/functional*.js'],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
     ],
     maxInstances: 10,
-    hostname: 'hub.screener.io',
-    port: 443,
-    protocol: 'https',
-    path: '/wd/hub',
+    user: process.env.SAUCE_USERNAME,
+    key: process.env.SAUCE_ACCESS_KEY,
     capabilities: [
         //Desktop A 28%: https://www.w3schools.com/browsers/browsers_display.asp
         {
             browserName: 'chrome',
             platformName: 'windows 10',
             browserVersion: 'latest',
+            acceptInsecureCerts: true,
             'sauce:options': {
-                ...sauceOptions,
-            },
-            'sauce:visual': {
-                ...visualOptions,
-                viewportSize: '1366x768',
+                build: `Sauce Labs W3C Desktop build-${new Date().getTime()}`,
+                screenResolution: '1440x900',
             },
         },
-        // //ihpone 12 pro
-        // {
-        //     browserName: 'safari',
-        //     platformName: 'macOS 11.00',
-        //     browserVersion: 'latest',
-        //     'sauce:options': {
-        //         ...sauceOptions,
-        //     },
-        //     'sauce:visual': {
-        //         ...visualOptions,
-        //         viewportSize: '390x844',
-        //     },
-        // },
     ],
     //
     // ===================
