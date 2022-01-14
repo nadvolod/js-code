@@ -166,6 +166,11 @@ package.json
    3. How do we test that having 0 remaining requests will hide the button?
    4. How do we update that our UI correctly displays the return from the API?
 
+## Happo integration
+
+- Install cypress `npm install cypress --save-dev`
+- Install happo `npm install --save-dev happo-cypress happo-e2e happo.io`
+
 ## Inspiration
 
 Huge thanks to [John Smilga for the inspiration](https://github.com/john-smilga/starter-project-react-github-search-users)

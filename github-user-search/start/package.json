@@ -43,6 +43,10 @@
         "@wdio/dot-reporter": "^7.16.13",
         "@wdio/local-runner": "^7.16.13",
         "@wdio/mocha-framework": "^7.16.13",
-        "@wdio/sauce-service": "^7.16.13"
+        "@wdio/sauce-service": "^7.16.13",
+        "cypress": "^9.2.1",
+        "happo-cypress": "^3.0.0",
+        "happo-e2e": "^1.0.0",
+        "happo.io": "^7.0.1"
     }
 }
