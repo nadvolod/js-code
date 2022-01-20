@@ -1,34 +1,45 @@
 {
-  "name": "reminder",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "CI= react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "reminder",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.5.0",
+        "@testing-library/user-event": "^7.2.1",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-scripts": "3.4.3"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "CI= react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "wdio": "wdio run wdio.conf.js"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@wdio/cli": "^7.16.13",
+        "@wdio/local-runner": "^7.16.13",
+        "@wdio/mocha-framework": "^7.16.13",
+        "@wdio/sauce-service": "^7.16.13",
+        "@wdio/spec-reporter": "^7.16.13",
+        "chromedriver": "^97.0.0",
+        "wdio-chromedriver-service": "^7.2.6",
+        "wdio-slack-service": "^2.0.9"
+    }
 }
