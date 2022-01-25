@@ -1,21 +1,23 @@
-describe("Visual checks", () => {
-  it("pages render correctly", async () => {
-    await browser.url(``);
-    //in all snapshots, we will ignore these locators
-    await browser.execute("/*@visual.init*/", "Visual Test", {
-      ignore: "[data-testid='requests-counter']",
-    });
-    await browser.execute("/*@visual.snapshot*/", "Home Page");
+/* eslint-disable no-undef */
+describe('Visual checks', () => {
+	it('pages render correctly', async () => {
+		await browser.url('');
+		await browser.execute('/*@visual.init*/', 'Visual Test');
+		await browser.execute('/*@visual.snapshot*/', 'Dashboard Page');
 
-    await browser.url(`/login`);
-    await browser.execute("/*@visual.snapshot*/", "Login Page");
-    const img = await $("img");
-    img.waitForExist({ timeout: 5000 });
+		await browser.url('/login');
+		const githubImage = await $('[alt="github user"]');
+		await githubImage.waitForDisplayed();
+		await browser.execute('/*@visual.snapshot*/', 'Login Page');
 
-    await browser.url(`/foobar`);
-    await browser.execute("/*@visual.snapshot*/", "Error Page");
+		await browser.url('/foobar');
+		//await browser.debug();
+		// await browser.execute('sauce: break');
+		const button = await $('[data-testid="back-home"]');
+		await button.waitForDisplayed();
+		await browser.execute('/*@visual.snapshot*/', 'Error Page');
 
-    const result = await browser.execute("/*@visual.end*/");
-    expect(result.message).toBeNull();
-  });
+		const result = await browser.execute('/*@visual.end*/');
+		expect(result.message).toBeNull();
+	});
 });

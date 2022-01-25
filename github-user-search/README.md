@@ -6,6 +6,7 @@
 
 1. Install node 14 LTS
 2. Install create-react-app `npm install -g create-react-app`
+3. Increase [ulimit for testing on sauce](https://support.saucelabs.com/hc/en-us/articles/115005571668)
 
 View finished project👇
 
@@ -35,27 +36,27 @@ Context is designed to share data that can be considered “global” for a tree
 
 ```js
 class App extends React.Component {
-  render() {
-    return <Toolbar theme='dark' />;
-  }
+	render() {
+		return <Toolbar theme='dark' />;
+	}
 }
 
 function Toolbar(props) {
-  // The Toolbar component must take an extra "theme" prop
-  // and pass it to the ThemedButton. This can become painful
-  // if every single button in the app needs to know the theme
-  // because it would have to be passed through all components.
-  return (
-    <div>
-      <ThemedButton theme={props.theme} />
-    </div>
-  );
+	// The Toolbar component must take an extra "theme" prop
+	// and pass it to the ThemedButton. This can become painful
+	// if every single button in the app needs to know the theme
+	// because it would have to be passed through all components.
+	return (
+		<div>
+			<ThemedButton theme={props.theme} />
+		</div>
+	);
 }
 
 class ThemedButton extends React.Component {
-  render() {
-    return <Button theme={this.props.theme} />;
-  }
+	render() {
+		return <Button theme={this.props.theme} />;
+	}
 }
 ```
 
@@ -144,6 +145,8 @@ package.json
 [create-react-app Warning Fix Blog Post](https://community.netlify.com/t/how-to-fix-build-failures-with-create-react-app-in-production/17752)
 
 ## Testing
+
+** screener visual e2e is having issues testing the app in a multithreaded manner **
 
 1. How do we ensure that all the paths of the Routes are correct in App.js?
 2. How do we test Error.js page?
