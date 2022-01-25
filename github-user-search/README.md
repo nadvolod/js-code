@@ -8,6 +8,8 @@
 2. Install create-react-app `npm install -g create-react-app`
 3. Increase [ulimit for testing on sauce](https://support.saucelabs.com/hc/en-us/articles/115005571668)
 
+[Live projects](https://www.nikolay.tech/)
+
 View finished project👇
 
 ```bash
@@ -105,9 +107,9 @@ version used - "react-router-dom": "^5.2.0",
 ## Gihthub API
 
 - [Root Endpoint](https://api.github.com)
-- [Get User](https://api.github.com/users/wesbos)
-- [Repos](https://api.github.com/users/john-smilga/repos?per_page=100)
-- [Followers](https://api.github.com/users/john-smilga/followers)
+- [Get User](https://api.github.com/users/nadvolod)
+- [Repos](https://api.github.com/users/nadvolod/repos?per_page=1)
+- [Followers](https://api.github.com/users/nadvolod/followers)
 - [Rate Limit](https://api.github.com/rate_limit)
 
   For unauthenticated requests, the rate limit allows for up to 60 requests per hour. Unauthenticated requests are associated with the originating IP address, and not the user making requests.
