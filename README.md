@@ -12,3 +12,4 @@ Useful code and practice of JavaScript
 ### Concepts
 
 - [WebdriverIO w/ Screener.io on localhost]
+- [Sauce connect Proxy] be sure to run with a higher [ulimit](https://support.saucelabs.com/hc/en-us/articles/115005571668)
