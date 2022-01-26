@@ -6,6 +6,9 @@ const sauceOptions = {
 	username: process.env.SAUCE_USERNAME,
 	accesskey: process.env.SAUCE_ACCESS_KEY,
 	build: `Visual Tests-${new Date().getTime()}`,
+	//enable HAR files
+	extendedDebugging: true,
+	capturePerformance: true,
 };
 exports.config = {
 	region: process.env.REGION || 'us',
