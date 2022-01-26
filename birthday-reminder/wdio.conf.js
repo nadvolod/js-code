@@ -1,6 +1,6 @@
 const visualOptions = {
 	apiKey: process.env.SCREENER_API_KEY,
-	projectName: 'birthday-reminder',
+	projectName: 'ctm2022',
 };
 const sauceOptions = {
 	username: process.env.SAUCE_USERNAME,
@@ -60,6 +60,6 @@ exports.config = {
 	reporters: ['spec'],
 	mochaOpts: {
 		ui: 'bdd',
-		timeout: 60000,
+		timeout: 180000,
 	},
 };
