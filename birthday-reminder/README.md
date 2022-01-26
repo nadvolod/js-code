@@ -13,7 +13,7 @@ npm run wdio
 
 ## Nikolay Advolodkin
 
-<img src="../public/me-and-mia.jpg" alt="me" width="150"/>
+<img src="./public/me-and-mia.jpeg" alt="me" width="150"/>
 
 - 🔭 I’m the founder of [Ultimate QA](https://ultimateqa.com/) a Sr Solutions Architect at [Sauce Labs](https://saucelabs.com/)
 - 👨‍💻 I’m currently working on [Sauce Bindings](https://github.com/saucelabs/sauce_bindings)
