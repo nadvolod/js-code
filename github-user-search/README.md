@@ -168,8 +168,7 @@ package.json
 6. Testing Search.js
    1. How do we test that it looks correct?
    2. How do we test that a search correctly updates the remaining?
-   3. How do we test that having 0 remaining requests will hide the button?
-   4. How do we update that our UI correctly displays the return from the API?
+   3. How do we check that our UI correctly displays the return from the API?
 
 ## Inspiration
 
