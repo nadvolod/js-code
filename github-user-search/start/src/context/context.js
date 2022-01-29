@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import mockUser from './mockData.js/mockUser';
 import mockRepos from './mockData.js/mockRepos';
 import mockFollowers from './mockData.js/mockFollowers';
-import axios from 'axios';
 
-const rootUrl = 'https://api.github.com';
+const axios = require('axios').default;
+axios.defaults.baseURL = 'https://api.github.com';
 
 const GithubContext = React.createContext();
 
@@ -18,7 +18,8 @@ const GithubProvider = ({ children }) => {
 
 	//nfn named function
 	const checkRequests = () => {
-		axios(`${rootUrl}/rate_limit`)
+		axios
+			.get('/rate_limit')
 			.then(({ data }) => {
 				let { remaining } = data.rate;
 				setRequests(remaining);
