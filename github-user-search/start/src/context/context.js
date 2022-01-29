@@ -14,16 +14,36 @@ const GithubProvider = ({ children }) => {
 	const [followers, setFollowers] = useState(mockFollowers);
 	//request loading
 	const [requests, setRequests] = useState(0);
-	const [loading, setIsLoading] = useState(false);
 
+	const searchGithubUser = async (user) => {
+		const response = await axios
+			.get(`users/${user}`)
+			.catch((err) => console.log(err));
+
+		console.log(response);
+		if (response) {
+			setGithubUser(response.data);
+			const { followers_url, login } = response.data;
+
+			axios
+				.get(`/users/${login}/repos`)
+				.then((response) => setRepos(response.data));
+
+			axios
+				.get(`${followers_url}?per_page=100`)
+				.then((response) => setFollowers(response.data));
+		} else {
+			console.log('no such user');
+		}
+	};
 	//nfn named function
-	const checkRequests = () => {
+	const getRemainingRequests = () => {
 		axios
 			.get('/rate_limit')
 			.then(({ data }) => {
 				let { remaining } = data.rate;
 				setRequests(remaining);
-				console.log(remaining);
+				console.log('setRequests', remaining);
 				if (remaining == 0) {
 					//throw error
 				}
@@ -33,9 +53,14 @@ const GithubProvider = ({ children }) => {
 			});
 	};
 
-	useEffect(checkRequests, []);
+	//add empty dependency array hence,
+	// useEffect will run only once after the rendering of the page.
+	// It will not re-run
+	useEffect(() => getRemainingRequests());
 	return (
-		<GithubContext.Provider value={{ githubUser, repos, followers, requests }}>
+		<GithubContext.Provider
+			value={{ githubUser, repos, followers, requests, searchGithubUser }}
+		>
 			{children}
 		</GithubContext.Provider>
 	);
