@@ -2,118 +2,79 @@ import React, { useState, useEffect } from 'react';
 import mockUser from './mockData.js/mockUser';
 import mockRepos from './mockData.js/mockRepos';
 import mockFollowers from './mockData.js/mockFollowers';
-// our api library
-import axios from 'axios';
 
-const rootUrl = 'https://api.github.com';
+const axios = require('axios').default;
+axios.defaults.baseURL = 'https://api.github.com';
 
 const GithubContext = React.createContext();
 
-// use `nfn` for const
 const GithubProvider = ({ children }) => {
-    //the default value of useState is mockUser
-    //later we can use setGithubUser() to change the value
-    //`dar` - destructured array
-    const [githubUser, setGithubUser] = useState(mockUser);
-    const [repos, setRepos] = useState(mockRepos);
-    const [followers, setFollowers] = useState(mockFollowers);
-    //request loading
-    const [requests, setRequests] = useState(0);
-    const [isLoading, setIsLoading] = useState(false);
+	const [githubUser, setGithubUser] = useState(mockUser);
+	const [repos, setRepos] = useState(mockRepos);
+	const [followers, setFollowers] = useState(mockFollowers);
+	//request loading
+	const [requests, setRequests] = useState(0);
 
-    //`nfn` for const named function
-    const searchGithubUser = async (user) => {
-        //toggleError
-        setIsLoading(true);
-        const response = await axios(`${rootUrl}/users/${user}`).catch((err) =>
-            console.log(err)
-        );
-        console.log(response);
-        if (response) {
-            //response.data contains the user object with all the info
-            setGithubUser(response.data);
-            // the `login, followers_url` objects are actually properties of the response.data json object
-            const { login, followers_url } = response.data;
-            await Promise.allSettled([
-                axios(`${rootUrl}/users/${login}/repos?per_page=100`),
-                axios(`${followers_url}?per_page=100`),
-            ])
-                .then((results) => {
-                    const [repos, followers] = results;
-                    const status = 'fulfilled';
-                    if (repos.status === status) {
-                        setRepos(repos.value.data);
-                    }
-                    if (followers.status === status) {
-                        setFollowers(followers.value.data);
-                    }
-                })
-                .catch((err) => console.log(err));
-        } else {
-            console.log('no such user');
-        }
-        checkRequests();
-        setIsLoading(false);
-    };
+	const searchGithubUser = async (user) => {
+		const response = await axios
+			.get(`users/${user}`)
+			.catch((err) => console.log(err));
 
-    //check rate
-    //nfn - named function
-    const checkRequests = () => {
-        //default is a GET
-        axios(`${rootUrl}/rate_limit`)
-            .then(({ data }) => {
-                console.log(data);
-                let {
-                    //data.rate contains the limit + remaining properties
-                    rate: { remaining },
-                } = data;
-                setRequests(remaining);
-                if (remaining === 0) {
-                    //throw an error
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    };
+		console.log(response);
+		if (response) {
+			setGithubUser(response.data);
+			console.log(response);
+			const { followers_url, login } = response.data;
 
-    //error
-    /**
-   * useEffect()
-   * Sometimes, we want to run some additional code after React has updated the DOM.
-   * Network requests, manual DOM mutations, and logging are common examples of
-   * effects that don’t require a cleanup.
-   *
-  What does useEffect do? 
-  By using this Hook, you tell React that your component needs to do something after render. 
-  React will remember the function you passed (we’ll refer to it as our “effect”), 
-  and call it later after performing the DOM updates. 
-  In this effect, we set the document title, 
-  but we could also perform data fetching or call some other imperative API. 
-   *
-   * Once the app loads, use checkRequests() as the callback
-   */
-    useEffect(checkRequests, []);
+			await Promise.allSettled([
+				axios.get(`/users/${login}/repos`),
+				axios.get(`${followers_url}?per_page=100`),
+			])
+				.then((results) => {
+					const [repos, followers] = results;
+					const fulfilledStatus = 'fulfilled';
 
-    /**
-     * 1. Every hook that we want to pass to another component needs to be returned here by being added to 'value'
-     * 2. Then, in a component, the function is destructured const {isLoading} = React.useContext(GithubContext)
-     * 3. And then used
-     */
-    return (
-        <GithubContext.Provider
-            value={{
-                githubUser,
-                repos,
-                followers,
-                requests,
-                searchGithubUser,
-                isLoading,
-            }}
-        >
-            {children}
-        </GithubContext.Provider>
-    );
+					if (repos.status === fulfilledStatus) {
+						setRepos(repos.value.data);
+					}
+					if (followers.status === fulfilledStatus) {
+						setFollowers(followers.value.data);
+					}
+				})
+				.catch((err) => console.log(err));
+		} else {
+			getRemainingRequests();
+			console.log('no such user');
+		}
+	};
+	//nfn named function
+	const getRemainingRequests = () => {
+		axios
+			.get('/rate_limit')
+			.then(({ data }) => {
+				let { remaining } = data.rate;
+				setRequests(remaining);
+				console.log('getRemainingRequests', remaining);
+				if (remaining == 0) {
+					//throw error
+				}
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+
+	//add empty dependency array hence,
+	// useEffect will run only once after the rendering of the page.
+	// It will not re-run
+	useEffect(() => getRemainingRequests());
+	return (
+		<GithubContext.Provider
+			value={{ githubUser, repos, followers, requests, searchGithubUser }}
+		>
+			{children}
+		</GithubContext.Provider>
+	);
 };
 
 export { GithubProvider, GithubContext };

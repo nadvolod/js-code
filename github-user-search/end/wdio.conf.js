@@ -1,13 +1,13 @@
 const visualOptions = {
 	apiKey: process.env.SCREENER_API_KEY,
-	projectName: 'github-users-search',
+	projectName: 'github-users',
 };
 const sauceOptions = {
 	username: process.env.SAUCE_USERNAME,
 	accesskey: process.env.SAUCE_ACCESS_KEY,
 	//enable HAR files
 	extendedDebugging: true,
-	// capturePerformance: true,
+	capturePerformance: true,
 };
 exports.config = {
 	region: process.env.REGION || 'us',
@@ -46,19 +46,19 @@ exports.config = {
 				viewportSize: '1366x768',
 			},
 		},
-		//iphone 12 pro
-		{
-			browserName: 'safari',
-			platformName: 'macOS 11.00',
-			browserVersion: 'latest',
-			'sauce:options': {
-				...sauceOptions,
-			},
-			'sauce:visual': {
-				...visualOptions,
-				viewportSize: '390x844',
-			},
-		},
+		// //iphone 12 pro
+		// {
+		// 	browserName: 'safari',
+		// 	platformName: 'macOS 11.00',
+		// 	browserVersion: 'latest',
+		// 	'sauce:options': {
+		// 		...sauceOptions,
+		// 	},
+		// 	'sauce:visual': {
+		// 		...visualOptions,
+		// 		viewportSize: '390x844',
+		// 	},
+		// },
 		// //Samsung S20
 		// //https://yesviz.com/viewport/
 		// {
@@ -86,7 +86,7 @@ exports.config = {
 	connectionRetryTimeout: 120000,
 	connectionRetryCount: 3,
 	framework: 'mocha',
-	reporters: ['spec'],
+	reporters: ['dot'],
 	mochaOpts: {
 		ui: 'bdd',
 		//set at least this timeout since visual snapshots can take up to 45 sec
