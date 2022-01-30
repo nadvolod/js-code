@@ -21,6 +21,7 @@ const Search = () => {
 					<div className='form-control'>
 						<MdSearch></MdSearch>
 						<input
+							data-testid='search-bar'
 							type='text'
 							placeholder='enter github user name'
 							value={user}
@@ -31,7 +32,7 @@ const Search = () => {
 						<button type='submit'>search</button>
 					</div>
 				</form>
-				<h3>requests: {requests}/60</h3>
+				<h3 data-testid='rate-limit'>requests: {requests}/60</h3>
 			</Wrapper>
 		</section>
 	);

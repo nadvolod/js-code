@@ -23,16 +23,27 @@ const GithubProvider = ({ children }) => {
 		console.log(response);
 		if (response) {
 			setGithubUser(response.data);
+			console.log(response);
 			const { followers_url, login } = response.data;
 
-			axios
-				.get(`/users/${login}/repos`)
-				.then((response) => setRepos(response.data));
+			await Promise.allSettled([
+				axios.get(`/users/${login}/repos`),
+				axios.get(`${followers_url}?per_page=100`),
+			])
+				.then((results) => {
+					const [repos, followers] = results;
+					const fulfilledStatus = 'fulfilled';
 
-			axios
-				.get(`${followers_url}?per_page=100`)
-				.then((response) => setFollowers(response.data));
+					if (repos.status === fulfilledStatus) {
+						setRepos(repos.value.data);
+					}
+					if (followers.status === fulfilledStatus) {
+						setFollowers(followers.value.data);
+					}
+				})
+				.catch((err) => console.log(err));
 		} else {
+			getRemainingRequests();
 			console.log('no such user');
 		}
 	};
@@ -43,7 +54,7 @@ const GithubProvider = ({ children }) => {
 			.then(({ data }) => {
 				let { remaining } = data.rate;
 				setRequests(remaining);
-				console.log('setRequests', remaining);
+				console.log('getRemainingRequests', remaining);
 				if (remaining == 0) {
 					//throw error
 				}
