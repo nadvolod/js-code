@@ -8,18 +8,18 @@ import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
 
 const Home = () => {
-  return (
-    <Layout>
-      {/* <Section grid> */}
-        <Hero />
-        {/* <BgAnimation /> */}
-      {/* </Section> */}
-      <Projects />
-      <Technologies />
-      <Timeline />
-      <Acomplishments />
-    </Layout>
-  );
+	return (
+		<Layout>
+			<Section grid>
+				<Hero />
+				<BgAnimation />
+			</Section>
+			<Projects />
+			<Technologies />
+			<Timeline />
+			<Acomplishments />
+		</Layout>
+	);
 };
 
 export default Home;

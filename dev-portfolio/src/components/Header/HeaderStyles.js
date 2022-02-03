@@ -46,7 +46,7 @@ export const Div3 = styled.div`
 `;
 
 export const Span = styled.span`
-	font-size: 3rem;
+	font-size: 2rem;
 `;
 
 // Navigation Links

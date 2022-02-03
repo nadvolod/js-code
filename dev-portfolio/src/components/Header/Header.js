@@ -28,7 +28,7 @@ const Header = () => (
 						display: 'flex',
 						alignItems: 'center',
 						color: 'white',
-						marginBottom: '20px',
+						marginBottom: '10px',
 					}}
 				>
 					<DiCssdeck size='3rem'></DiCssdeck>
