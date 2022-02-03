@@ -20,25 +20,26 @@ import {
 } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
 
+const myProjects = [
+	{
+		title: 'Project 1',
+		description: 'This is a really long description about this project',
+	},
+	{
+		title: 'Project 2',
+		description: 'This is a really long description about this project',
+	},
+	{
+		title: 'Project 3',
+		description: 'This is a really long description about this project',
+	},
+];
 const Projects = () => (
 	<Section nopadding id='projects'>
 		<SectionDivider></SectionDivider>
 		<SectionTitle main>Projects</SectionTitle>
 		<GridContainer>
-			{[
-				{
-					title: 'Project 1',
-					description: 'This is a really long description about this project',
-				},
-				{
-					title: 'Project 2',
-					description: 'This is a really long description about this project',
-				},
-				{
-					title: 'Project 3',
-					description: 'This is a really long description about this project',
-				},
-			].map((project) => (
+			{myProjects.map((project) => (
 				<div>
 					{project.title}
 					<br />
