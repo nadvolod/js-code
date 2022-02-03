@@ -29,3 +29,7 @@ tests_output/
 **/videos/
 **/cypress/screenshots/**
 **/build/**
+
+#next
+.next**
+.next/.**
