@@ -25,8 +25,25 @@ const Projects = () => (
 		<SectionDivider></SectionDivider>
 		<SectionTitle main>Projects</SectionTitle>
 		<GridContainer>
-			{[0, 1, 2, 3, 4, 5].map((project) => (
-				<div>{project}</div>
+			{[
+				{
+					title: 'Project 1',
+					description: 'This is a really long description about this project',
+				},
+				{
+					title: 'Project 2',
+					description: 'This is a really long description about this project',
+				},
+				{
+					title: 'Project 3',
+					description: 'This is a really long description about this project',
+				},
+			].map((project) => (
+				<div>
+					{project.title}
+					<br />
+					{project.description}
+				</div>
 			))}
 		</GridContainer>
 	</Section>
