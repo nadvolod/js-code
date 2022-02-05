@@ -2,11 +2,11 @@ export const projects = [
 	{
 		title: 'Ultimate QA',
 		description:
-			'Created a community of developers and SDETS to help each other create better code.',
-		image: '/images/1.png',
-		tags: ['Mongo', 'Express', 'React', 'Node'],
-		source: 'https://ultimateqa.com/',
-		visit: 'https://google.com',
+			'Created a community of 100K+ developers and SDETS to help each other create better code.',
+		image: '/images/ultimateqa.png',
+		tags: ['Wordpress', 'Testing', 'Development'],
+		source: '#',
+		visit: 'https://ultimateqa.com/',
 		id: 0,
 	},
 	{
