@@ -16,7 +16,7 @@ export const projects = [
 		image: '/images/github-users-search.png',
 		tags: ['React', 'REST API', 'Netlify', 'CypressIO'],
 		source:
-			'https://61d9fb1e9d115dbf5b790ad4--distracted-wilson-20a730.netlify.app/',
+			'https://github.com/nadvolod/js-code/tree/master/github-user-search',
 		visit:
 			'https://61d9fb1e9d115dbf5b790ad4--distracted-wilson-20a730.netlify.app/',
 		id: 1,
