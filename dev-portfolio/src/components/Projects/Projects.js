@@ -26,11 +26,12 @@ const Projects = () => (
 		<SectionTitle main>Projects</SectionTitle>
 		<GridContainer>
 			{projects.map((project) => (
-				<div>
-					{project.title}
-					<br />
-					{project.description}
-				</div>
+				<BlogCard key={project.id}>
+					<Img src={project.image} alt={project.title} />
+					<TitleContent>
+						<HeaderThree>{project.title}</HeaderThree>
+					</TitleContent>
+				</BlogCard>
 			))}
 		</GridContainer>
 	</Section>
