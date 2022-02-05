@@ -25,14 +25,32 @@ const Projects = () => (
 		<SectionDivider></SectionDivider>
 		<SectionTitle main>Projects</SectionTitle>
 		<GridContainer>
-			{projects.map((project) => (
-				<BlogCard key={project.id}>
-					<Img src={project.image} alt={project.title} />
-					<TitleContent>
-						<HeaderThree>{project.title}</HeaderThree>
-					</TitleContent>
-				</BlogCard>
-			))}
+			{/* old way we did {projects.map((project) => 
+				however, it's redundant to keep referencing the project
+				variable like project.id, project.image...
+				So instead, we can destructure our map to look like the
+				code below.
+				*/}
+			{projects.map(
+				({ id, image, title, description, tags, source, visit }) => (
+					<BlogCard key={id}>
+						<Img src={image} alt={title} />
+						<TitleContent>
+							<HeaderThree>{title}</HeaderThree>
+							<Hr></Hr>
+						</TitleContent>
+						<CardInfo>{description}</CardInfo>
+						<div>
+							<TitleContent>Stack</TitleContent>
+							<TagList>
+								{tags.map((tag, i) => (
+									<Tag key={i}>{tag}</Tag>
+								))}
+							</TagList>
+						</div>
+					</BlogCard>
+				)
+			)}
 		</GridContainer>
 	</Section>
 );

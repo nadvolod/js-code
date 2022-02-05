@@ -13,8 +13,8 @@ export const projects = [
 		title: 'Github User Search',
 		description:
 			'Created a web application that allows users to search for Github users and see their profile information. Tested and deployed.',
-		image: '/images/2.png',
-		tags: ['React', 'JavaScript', 'REST API', 'Netlify'],
+		image: '/images/github-users-search.png',
+		tags: ['React', 'REST API', 'Netlify', 'CypressIO'],
 		source:
 			'https://61d9fb1e9d115dbf5b790ad4--distracted-wilson-20a730.netlify.app/',
 		visit:

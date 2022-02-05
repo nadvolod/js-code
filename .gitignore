@@ -33,3 +33,12 @@ tests_output/
 #next
 .next**
 .next/.**
+dev-portfolio/.next/build-manifest.json
+dev-portfolio/.next/cache/webpack/client-development/0.pack
+dev-portfolio/.next/cache/webpack/client-development/index.pack
+dev-portfolio/.next/cache/webpack/server-development/0.pack
+dev-portfolio/.next/cache/webpack/server-development/index.pack
+dev-portfolio/.next/server/pages-manifest.json
+dev-portfolio/.next/server/webpack-runtime.js
+dev-portfolio/.next/static/chunks/webpack.js
+dev-portfolio/.next/static/development/_buildManifest.js
