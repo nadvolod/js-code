@@ -66,8 +66,12 @@ const Timeline = () => {
 
 	return (
 		<Section id='about'>
-			<SectionTitle>About Me</SectionTitle>
-			<SectionText>This is me</SectionText>
+			<SectionTitle>About Nikolay</SectionTitle>
+			<SectionText>
+				Nikolay Advolodkin is a seasoned SDET whose dedication to innovation and
+				progress has earned him the reputation as a strategist in the
+				information technology space.
+			</SectionText>
 			<CarouselContainer ref={carouselRef} onScroll={() => handleScroll()}>
 				<>
 					{/* the 'index' had to be named that, otherwise I was getting an error that 'index'

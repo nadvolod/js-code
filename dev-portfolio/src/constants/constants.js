@@ -22,31 +22,47 @@ export const projects = [
 		id: 1,
 	},
 	{
-		title: 'WebRTC App',
+		title: 'Sauce Bindings',
 		description:
-			"This is a code repository for the corresponding YouTube video. In this tutorial, we're going to build and deploy a React Video Chat Application using WebRTC.",
-		image: '/images/3.jpg',
-		tags: ['React', 'WebRTC'],
-		source: 'https://google.com',
-		visit: 'https://google.com',
+			'Co-created an open source project that allows users to interact with Sauce Labs through a beautiful API.',
+		image: '/images/sauce-bindings.png',
+		tags: ['Java', 'C#', 'Github Actions'],
+		source: 'https://github.com/saucelabs/sauce_bindings',
+		visit: 'https://opensource.saucelabs.com/sauce_bindings/docs/overview.html',
 		id: 2,
 	},
 	{
-		title: 'Unichat',
+		title: 'Birthday Reminder App',
 		description:
-			'This is a code repository for the corresponding video tutorial. In this video, we will create a full Realtime Chat Application',
-		image: '/images/4.jpg',
-		tags: ['React', 'ChatEngine', 'Firebase'],
-		source: 'https://google.com',
-		visit: 'https://google.com',
+			"A simple app that allows users to track their friends' birthdays.",
+		image: '/images/birthday-reminder.jpeg',
+		tags: ['React', 'Node', 'Netlify', 'WebdriverIO'],
+		source: 'https://github.com/nadvolod/js-code/tree/master/birthday-reminder',
+		visit: 'https://laughing-feynman-11feb4.netlify.app/',
+		id: 3,
+	},
+	{
+		title: 'Dev Portfolio Website',
+		description:
+			'A mobile-first, responsive, sleek website to show off my skills.',
+		image: '/images/portfolio.png',
+		tags: ['NextJS', 'Node'],
+		source: 'https://github.com/nadvolod/js-code/tree/master/dev-portfolio',
+		visit: 'https://laughing-feynman-11feb4.netlify.app/',
 		id: 3,
 	},
 ];
 
 export const TimeLineData = [
-	{ year: 2021, text: 'Started Testing for Good workshops' },
-	{ year: 2018, text: 'Working as Sr Solutions Architect' },
-	{ year: 2016, text: 'Worked as Test Automation Lead' },
+	{
+		year: 2021,
+		text: 'Started Testing for Good workshops. Raised $10k+ for testing communities + taught 100s of SDETs.',
+	},
+	{
+		year: 2018,
+		text: 'Sr Solutions Architect @ Sauce Labs. Top producing SA at the company.',
+	},
+	{ year: 2016, text: 'Test Automation Lead' },
 	{ year: 2015, text: 'Founded UltimateQA.com' },
 	{ year: 2013, text: 'Sr SDET at IXI' },
 	{ year: 2008, text: 'Started as QA Engineer' },
