@@ -44,9 +44,10 @@ export const projects = [
 ];
 
 export const TimeLineData = [
-	{ year: 2017, text: 'Started my journey' },
-	{ year: 2018, text: 'Worked as a freelance developer' },
-	{ year: 2019, text: 'Founded JavaScript Mastery' },
-	{ year: 2020, text: 'Shared my projects with the world' },
-	{ year: 2021, text: 'Started my own platform' },
+	{ year: 2021, text: 'Started Testing for Good workshops' },
+	{ year: 2018, text: 'Working as Sr Solutions Architect' },
+	{ year: 2016, text: 'Worked as Test Automation Lead' },
+	{ year: 2015, text: 'Founded UltimateQA.com' },
+	{ year: 2013, text: 'Sr SDET at IXI' },
+	{ year: 2008, text: 'Started as QA Engineer' },
 ];
