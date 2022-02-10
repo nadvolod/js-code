@@ -74,7 +74,7 @@ const Timeline = () => {
 			</SectionText>
 			<CarouselContainer ref={carouselRef} onScroll={() => handleScroll()}>
 				<>
-					{/* the 'index' had to be named that, otherwise I was getting an error that 'index'
+					{/* the 'index' had to be named 'index', otherwise I was getting an error that 'index'
         wasnt defined */}
 					{TimeLineData.map((item, index) => (
 						<CarouselMobileScrollNode

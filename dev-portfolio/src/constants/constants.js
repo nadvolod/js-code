@@ -56,11 +56,11 @@ export const projects = [
 export const TimeLineData = [
 	{
 		year: 2021,
-		text: 'Started Testing for Good workshops. Raised $10k+ for testing communities + taught 100s of SDETs.',
+		text: 'Creator of Testing for Good. Raised $10k+ for NGOs + trained 100s of SDETs.',
 	},
 	{
 		year: 2018,
-		text: 'Sr Solutions Architect @ Sauce Labs. Top producing SA at the company.',
+		text: 'Sr Solutions Architect @ Sauce Labs. Maintain most strategic accounts.',
 	},
 	{ year: 2016, text: 'Test Automation Lead' },
 	{ year: 2015, text: 'Founded UltimateQA.com' },
