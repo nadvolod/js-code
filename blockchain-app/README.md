@@ -4,6 +4,8 @@
 
 - Using [Vite](https://vitejs.dev/guide/why.html)
 - [tailwindcss](https://tailwindcss.com/)
+- [Github copilot for easier dev]
+- [ES7+ React/Redux/React-Native snippets](https://github.com/dsznajder/vscode-react-javascript-snippets/blob/HEAD/docs/Snippets.md)
 
 ```bash
  npm init vite@latest
