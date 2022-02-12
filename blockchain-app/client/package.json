@@ -5,7 +5,9 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"cy:test:visual": "npx happo-e2e -- npx cypress run",
+		"happo": "happo run"
 	},
 	"dependencies": {
 		"@vitejs/plugin-react": "^1.0.7",
@@ -17,12 +19,16 @@
 	},
 	"devDependencies": {
 		"autoprefixer": "^10.4.2",
+		"cypress": "^9.4.1",
 		"eslint": "^8.9.0",
 		"eslint-config-airbnb": "^19.0.4",
 		"eslint-plugin-import": "^2.25.4",
 		"eslint-plugin-jsx-a11y": "^6.5.1",
 		"eslint-plugin-react": "^7.28.0",
 		"eslint-plugin-react-hooks": "^4.3.0",
+		"happo-cypress": "^3.0.1",
+		"happo-e2e": "^1.0.3",
+		"happo.io": "^7.0.1",
 		"postcss": "^8.4.6",
 		"tailwindcss": "^3.0.22"
 	}

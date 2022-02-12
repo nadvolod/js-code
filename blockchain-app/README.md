@@ -18,3 +18,6 @@
 ```
 
 [Install tailwind w/ vite](https://tailwindcss.com/docs/guides/vite)
+
+[Install Happo and cypress](https://docs.happo.io/docs/cypress)
+[Happy cypress example](https://github.com/happo/happo-cypress-example-todomvc/blob/master/cypress/integration/app_spec.js)
