@@ -11,4 +11,4 @@
   npm run dev
 ```
 
-[Install tailwind](https://tailwindcss.com/docs/installation)
+[Install tailwind w/ vite](https://tailwindcss.com/docs/guides/vite)
