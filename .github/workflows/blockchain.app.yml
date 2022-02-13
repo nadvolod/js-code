@@ -7,7 +7,7 @@ on:
   push:
     # Only trigger if files in this path changed
     paths:
-      - 'blockchain-app/**'
+      - 'blockchain-app/client/**'
       - '.github/workflows/blockchain**'
       # Don't run on Markdown changes
       - '!**.md'
@@ -15,8 +15,8 @@ on:
   pull_request:
     # Only trigger if files in this path changed
     paths:
-      - 'blockchain-app/**'
-      - '.github/workflows/blockchain**'
+      - 'blockchain-app/client/**'
+      - '.github/workflows/blockchain.app.yml'
       # Don't run on Markdown changes
       - '!**.md'
     branches: [ main ]
