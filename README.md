@@ -6,6 +6,8 @@ Tons of JavaScript concepts in a single repo!
 
 **🥗 Like my content? [Buy me a salad](https://www.buymeacoffee.com/nikolaya)**
 
+**📬[Get notified of latest projects and JS testing tips](https://ultimateqa.ck.page/js-testing-tips)**
+
 ## TOC
 
 - [Birthday reminder web app, ReactJS, Screener, WebdriverIO, Sauce Labs](./birthday-reminder)
