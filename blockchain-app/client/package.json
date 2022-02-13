@@ -6,7 +6,7 @@
 		"dev": "vite",
 		"build": "vite build",
 		"preview": "vite preview",
-		"cy:test:visual": "npx happo-e2e -- npx cypress run",
+		"cy:visual": "npx happo-e2e -- npx cypress run",
 		"happo": "happo run"
 	},
 	"dependencies": {

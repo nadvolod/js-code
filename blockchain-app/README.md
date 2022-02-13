@@ -21,3 +21,7 @@
 
 [Install Happo and cypress](https://docs.happo.io/docs/cypress)
 [Happy cypress example](https://github.com/happo/happo-cypress-example-todomvc/blob/master/cypress/integration/app_spec.js)
+
+## Testing
+
+- How do we ensure that all of our pages look correct on web and mobile, chrome and safari?
