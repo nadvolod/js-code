@@ -32,12 +32,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - working-directory: blockchain-app/client
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2      
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        working-directory: blockchain-app/client
     - name: Install dependencies 📦
       #Using npm ci is generally faster than running npm install
       run: |
