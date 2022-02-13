@@ -38,6 +38,17 @@ const Welcome = () => {
 						<div className={`rounded-tl-2xl ${companyCommonStyles}`}>
 							Reliability
 						</div>
+						<div className={companyCommonStyles}>Security</div>
+						<div className={`sm:rounded-tr-2xl ${companyCommonStyles}`}>
+							Ethereum
+						</div>
+						<div className={`sm:rounded-bl-2xl ${companyCommonStyles}`}>
+							Web 3.0
+						</div>
+						<div className={companyCommonStyles}>Low Fees</div>
+						<div className={`rounded-br-2xl ${companyCommonStyles}`}>
+							Blockchain
+						</div>
 					</div>
 				</div>
 			</div>

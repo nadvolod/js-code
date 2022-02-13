@@ -25,3 +25,4 @@
 ## Testing
 
 - How do we ensure that all of our pages look correct on web and mobile, chrome and safari?
+- How do we test that 'Connect Wallet' button in Welcome.js does the right thing?
