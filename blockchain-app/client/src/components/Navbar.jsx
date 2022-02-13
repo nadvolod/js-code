@@ -42,6 +42,7 @@ const Navbar = () => {
 						fontSize={28}
 						className='text-white md:hidden cursor-pointer'
 						onClick={() => setToggleMenu(false)}
+						data-testid='hamburger-icon'
 					/>
 				)}
 				{toggleMenu && (

@@ -7,6 +7,7 @@
 - [Github copilot for easier dev]
 - [ES7+ React/Redux/React-Native snippets](https://github.com/dsznajder/vscode-react-javascript-snippets/blob/HEAD/docs/Snippets.md)
 - [Install ESLint using Airbnb config](https://eslint.org/docs/user-guide/getting-started)
+- [Using CSShero.org for gradients on the card](https://csshero.org/mesher/)
 
 * Run eslint with `npx eslint .`
 * Automatically fix problems with `npx eslint . --fix`
