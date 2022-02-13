@@ -8,4 +8,13 @@ describe('blockchain app', () => {
 	it('displays the home page correctly', () => {
 		cy.get('body').happoScreenshot();
 	});
+
+	it('displays the hamburger menu', () => {
+		cy.get('[data-testid="hamburger-icon"]')
+			.click()
+			.happoScreenshot({
+				component: 'hamburger-menu',
+				targets: ['safari-iphone-12-pro'],
+			});
+	});
 });
