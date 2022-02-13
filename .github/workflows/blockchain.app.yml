@@ -5,15 +5,26 @@ name: Blockchain App CI
 
 on:
   push:
-    branches: [ master ]
+    # Only trigger if files in this path changed
+    paths:
+      - 'blockchain-app/**'
+      - '.github/workflows/blockchain**'
+      # Don't run on Markdown changes
+      - '!**.md'
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    # Only trigger if files in this path changed
+    paths:
+      - 'blockchain-app/**'
+      - '.github/workflows/blockchain**'
+      # Don't run on Markdown changes
+      - '!**.md'
+    branches: [ main ]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
@@ -21,8 +32,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - working-directory: blockchain-app/client
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v2      
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
