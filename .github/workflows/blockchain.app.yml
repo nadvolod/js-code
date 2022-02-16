@@ -28,6 +28,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: blockchain-app/client/package-lock.json
     - name: Install dependencies 📦
       #Using npm ci is generally faster than running npm install
       run: |
