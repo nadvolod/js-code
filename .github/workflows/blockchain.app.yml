@@ -23,16 +23,16 @@ on:
 
 jobs:
   build:
-    defaults:
-      run:
-        working-directory: ./blockchain-app/client/
 
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [14.x, 16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
+    
+    defaults:
+      run:
+        working-directory: ./blockchain-app/client/
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -40,7 +40,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        working-directory: blockchain-app/client
     - name: Install dependencies 📦
       #Using npm ci is generally faster than running npm install
       run: |
