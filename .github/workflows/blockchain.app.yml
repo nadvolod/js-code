@@ -5,20 +5,8 @@ name: Blockchain App CI
 
 on:
   push:
-    # Only trigger if files in this path changed
-    paths:
-      - '/blockchain-app/client/**'
-      - '.github/workflows/blockchain.app.yml'
-      # Don't run on Markdown changes
-      - '!**.md'
     branches: [ main ]
   pull_request:
-    # Only trigger if files in this path changed
-    paths:
-      - '/blockchain-app/client/**'
-      - '.github/workflows/blockchain.app.yml'
-      # Don't run on Markdown changes
-      - '!**.md'
     branches: [ main ]
 
 jobs:
