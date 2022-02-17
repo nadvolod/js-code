@@ -29,7 +29,7 @@ const Navbar = () => {
 				</li>
 			</ul>
 			{/* navigation for mobile devices */}
-			<div className='flex relative'>
+			<div className='flex relative' data-testid='hamburger-menu'>
 				{!toggleMenu && (
 					<HiMenuAlt4
 						fontSize={28}
@@ -42,7 +42,6 @@ const Navbar = () => {
 						fontSize={28}
 						className='text-white md:hidden cursor-pointer'
 						onClick={() => setToggleMenu(false)}
-						data-testid='hamburger-icon'
 					/>
 				)}
 				{toggleMenu && (

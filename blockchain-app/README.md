@@ -27,3 +27,12 @@
 
 - How do we ensure that all of our pages look correct on web and mobile, chrome and safari?
 - How do we test that 'Connect Wallet' button in Welcome.js does the right thing?
+- How do we test the correct loading behavior of the spinner?
+
+## Installing smart contract deps
+
+```bash
+npm install --save-dev @nomiclabs/hardhat-ethers @nomiclabs/hardhat-waffle chai ethereum-waffle ethers hardhat
+```
+
+[hardhat ethereum dev environment](https://hardhat.org/) Start with `npx hardhat`

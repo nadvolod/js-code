@@ -10,7 +10,7 @@ describe('blockchain app', () => {
 	});
 
 	it('displays the hamburger menu', () => {
-		cy.get('[data-testid="hamburger-icon"]')
+		cy.get('[data-testid="hamburger-menu"]')
 			.click()
 			.happoScreenshot({
 				component: 'hamburger-menu',
