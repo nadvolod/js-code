@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { TransactionProvider } from './context/TransactionContext';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
+import { TransactionProvider } from './context/TransactionContext'
 
 ReactDOM.render(
-	<TransactionProvider>
+  <TransactionProvider>
 		<App />
 	</TransactionProvider>,
-	document.getElementById('root')
-);
+  document.getElementById('root')
+)

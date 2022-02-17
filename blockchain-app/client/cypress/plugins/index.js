@@ -17,11 +17,11 @@
  */
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
-	// `on` is used to hook into various events Cypress emits
-	// `config` is the resolved Cypress config
-};
-const happoTask = require('happo-cypress/task');
+    // `on` is used to hook into various events Cypress emits
+    // `config` is the resolved Cypress config
+}
+const happoTask = require('happo-cypress/task')
 
 module.exports = (on) => {
-	happoTask.register(on);
-};
+    happoTask.register(on)
+}
