@@ -13,7 +13,9 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
 /* Gradients */
+/* create new gradient here https://csshero.org/mesher/ */
 .gradient-bg-welcome {
 	background-color: #0f0e13;
 	background-image: radial-gradient(
