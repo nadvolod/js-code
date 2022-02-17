@@ -59,3 +59,50 @@ npm install --save-dev @nomiclabs/hardhat-ethers @nomiclabs/hardhat-waffle chai 
 **Make sure you have enough ETH to do the deploy **
 
 Expected message will be similar to `Transactions deployed to: 0xB1eA0Bc0Bbd554d921Ac6778775208A39259831A`
+
+## React Context
+
+[docs](https://reactjs.org/docs/context.html)
+
+Context is designed to share data that can be considered “global” for a tree of React components, such as the current authenticated user, theme, or preferred language.
+
+```js
+// Context lets us pass a value deep into the component tree
+// without explicitly threading it through every component.
+// Create a context for the current theme (with "light" as the default).
+const ThemeContext = React.createContext('light');
+
+class App extends React.Component {
+	render() {
+		// Use a Provider to pass the current theme to the tree below.
+		// Any component can read it, no matter how deep it is.
+		// In this example, we're passing "dark" as the current value.
+		return (
+			// ThemeContext is the const that we defined above. We're setting a new theme value
+			<ThemeContext.Provider value='dark'>
+				<Toolbar />
+			</ThemeContext.Provider>
+		);
+	}
+}
+
+// A component in the middle doesn't have to
+// pass the theme down explicitly anymore.
+function Toolbar() {
+	return (
+		<div>
+			<ThemedButton />
+		</div>
+	);
+}
+
+class ThemedButton extends React.Component {
+	// Assign a contextType to read the current theme context.
+	// React will find the closest theme Provider above and use its value.
+	// In this example, the current theme is "dark".
+	static contextType = ThemeContext;
+	render() {
+		return <Button theme={this.context} />;
+	}
+}
+```
