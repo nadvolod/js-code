@@ -1,27 +1,25 @@
-/* eslint-disable no-undef */
 import React, { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
+
 import { contractABI, contractAddress } from '../utils/constants'
 
-// create a context for transactions with no default value
 export const TransactionContext = React.createContext()
 
-// window.ethereum is enabled thanks to our Metamask extension
 const { ethereum } = window
 
 const createEthereumContract = () => {
     const provider = new ethers.providers.Web3Provider(ethereum)
     const signer = provider.getSigner()
-    const transactionContract = new ethers.Contract(contractAddress, contractABI, signer)
+    const transactionsContract = new ethers.Contract(contractAddress, contractABI, signer)
 
-    return transactionContract
+    return transactionsContract
 }
 
-export const TransactionProvider = ({ children }) => {
-    const [formData, setFormData] = useState({
+export const TransactionsProvider = ({ children }) => {
+    console.log('rendering TransactionsProvider')
+    const [formData, setformData] = useState({
         addressTo: '',
         amount: '',
-        keyword: '',
         message: '',
     })
     const [currentAccount, setCurrentAccount] = useState('')
@@ -38,8 +36,8 @@ export const TransactionProvider = ({ children }) => {
     const getAllTransactions = async () => {
         try {
             if (ethereum) {
+                console.log('ethereum is connected')
                 const transactionsContract = createEthereumContract()
-
                 const availableTransactions = await transactionsContract.getAllTransactions()
 
                 const structuredTransactions = availableTransactions.map((transaction) => ({
@@ -62,7 +60,7 @@ export const TransactionProvider = ({ children }) => {
         }
     }
 
-    const isWalletConnected = async () => {
+    const checkIfWalletIsConnect = async () => {
         try {
             if (!ethereum) return alert('Please install MetaMask.')
 
@@ -80,6 +78,21 @@ export const TransactionProvider = ({ children }) => {
         }
     }
 
+    const checkIfTransactionsExists = async () => {
+        try {
+            if (ethereum) {
+                const transactionsContract = createEthereumContract()
+                const currentTransactionCount = await transactionsContract.getTransactionCount()
+
+                window.localStorage.setItem('transactionCount', currentTransactionCount)
+            }
+        } catch (error) {
+            console.log(error)
+
+            throw new Error('No ethereum object')
+        }
+    }
+
     const connectWallet = async () => {
         try {
             if (!ethereum) return alert('Please install MetaMask.')
@@ -88,21 +101,6 @@ export const TransactionProvider = ({ children }) => {
 
             setCurrentAccount(accounts[0])
             window.location.reload()
-        } catch (error) {
-            console.log(error)
-
-            throw new Error('No ethereum object')
-        }
-    }
-
-    const doesTransactionExist = async () => {
-        try {
-            if (ethereum) {
-                const transactionsContract = createEthereumContract()
-                const currentTransactionCount = await transactionsContract.getTransactionCount()
-
-                window.localStorage.setItem('transactionCount', currentTransactionCount)
-            }
         } catch (error) {
             console.log(error)
 
@@ -156,15 +154,12 @@ export const TransactionProvider = ({ children }) => {
         }
     }
 
-    // runs after the component is rendered
     useEffect(() => {
-        isWalletConnected()
-        doesTransactionExist()
+        checkIfWalletIsConnect()
+        checkIfTransactionsExists()
     }, [transactionCount])
 
     return (
-        // using TransactionContext defined above, .Provider allows us to set
-        // a value to pass down to all of the children
         <TransactionContext.Provider
             value={{
                 transactionCount,
