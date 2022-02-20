@@ -7,6 +7,7 @@
         "build": "vite build",
         "preview": "vite preview",
         "test:visual": "npx happo-e2e -- npx cypress run",
+        "test": "react-scripts test",
         "happo": "happo run"
     },
     "dependencies": {
@@ -16,10 +17,14 @@
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-icons": "^4.3.1",
+        "react-scripts": "^5.0.0",
         "vite": "^2.8.0"
     },
     "devDependencies": {
         "@babel/core": "^7.17.2",
+        "@testing-library/jest-dom": "^5.16.2",
+        "@testing-library/react": "^12.1.3",
+        "@testing-library/user-event": "^13.5.0",
         "@typescript-eslint/parser": "^5.12.0",
         "autoprefixer": "^10.4.2",
         "babel-loader": "^8.2.3",

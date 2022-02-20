@@ -5,9 +5,6 @@ import { BsInfoCircle } from 'react-icons/bs'
 import Loader from './Loader'
 import { TransactionContext } from '../context/TransactionContext'
 
-const connectWallet = () => {
-    console.log('connectWallet')
-}
 const shortenAddress = () => {
     console.log('shortenAddress')
 }
@@ -16,7 +13,7 @@ const handleChange = () => {
 }
 const isLoading = () => false
 
-function Input({ placeholder, name, type, value, handleChange }) {
+const Input = ({ placeholder, name, type, value, handleChange }) => {
     return (
         <input
             placeholder={placeholder}
@@ -35,11 +32,9 @@ const currentAccount = false
 const companyCommonStyles =
     'min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white'
 
-function Welcome() {
+const Welcome = () => {
     // consuming TransactionContext using useContext
-    const value = useContext(TransactionContext)
-
-    console.log(value)
+    const connectWallet = useContext(TransactionContext)
 
     return (
         <div className="flex w-full justify-center items-center">
@@ -55,7 +50,7 @@ function Welcome() {
                     {!currentAccount && (
                         <button
                             type="button"
-                            onClick={connectWallet}
+                            onClick={connectWallet.connectWallet}
                             className="flex flex-row justify-center items-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#2546bd]"
                         >
                             <AiFillPlayCircle className="text-white mr-2" />
