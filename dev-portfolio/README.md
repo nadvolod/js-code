@@ -17,3 +17,7 @@ npm i && npm run dev
 [Thanks to JavaScript Mastery for the inspiration](https://www.youtube.com/watch?v=OPaLnMw2i_0&list=PL1YmAbfxmHuOsV3zmAnncnql3MMsIeO2_&index=24)
 
 ## Testing
+
+### visual testing
+
+For visual testing I had to enable an [ignore threhold](https://docs.happo.io/docs/compare-threshold)

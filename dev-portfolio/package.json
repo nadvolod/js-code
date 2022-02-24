@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "test:visual": "npx happo-e2e -- npx cypress run"
   },
   "dependencies": {
+    "cypress": "^9.5.0",
     "next": "10.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -16,6 +18,8 @@
     "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
+    "happo-cypress": "^3.0.1",
+    "happo-e2e": "^1.0.3",
     "happo.io": "^7.0.2"
   }
 }
