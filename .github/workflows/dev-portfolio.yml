@@ -28,10 +28,12 @@ jobs:
       #Using npm ci is generally faster than running npm install
       run: |
         cd dev-portfolio/
+        ls -a
         npm ci
     - name: Build the app for prod 🏗
       run: |
         cd dev-portfolio/
+        ls -a
         npm run build
     - name: Start the app 📤
       #Vite has a different command for deploy than vanilla react
