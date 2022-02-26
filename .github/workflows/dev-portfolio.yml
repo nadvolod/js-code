@@ -5,17 +5,8 @@ name: Dev Portfolio CI
 
 on:
   push:
-    # Only trigger if files in this path changed
-    paths:
-      - 'dev-portfolio/**'
-      - '**.dev-portfolio.yml'
-      - '!**.md'
     branches: [ main ]
   pull_request:
-    paths:
-      - 'dev-portfolio/**'
-      - '**.dev-portfolio.yml'
-      - '!**.md'
     branches: [ main ]
 
 jobs:
