@@ -9,16 +9,18 @@ on:
     paths:
       - 'dev-portfolio/**'
       - '.github/workflows/dev-portfolio.yml'
-      # Don't run on Markdown changes
-      - '!**.md'
+    # Don't run on Markdown changes
+    paths-ignore:
+      - '**.md'
     branches: [ main ]
   pull_request:
     # Only trigger if files in this path changed
     paths:
       - 'dev-portfolio/**'
       - '.github/workflows/dev-portfolio.yml'
-      # Don't run on Markdown changes
-      - '!**.md'
+    # Don't run on Markdown changes
+    paths-ignore:
+      - '**.md'
     branches: [ main ]
 
 jobs:
