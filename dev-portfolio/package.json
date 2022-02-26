@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "test:visual": "npx happo-e2e -- npx cypress run"
+    "test:visual": "npx happo-e2e -- npx cypress run",
+    "happo": "happo",
+    "happo-ci-github-actions": "happo-ci-github-actions"
   },
   "dependencies": {
     "cypress": "^9.5.0",
