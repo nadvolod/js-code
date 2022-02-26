@@ -8,13 +8,13 @@ on:
     # Only trigger if files in this path changed
     paths:
       - 'dev-portfolio/**'
-      - '.github/workflows/dev-portfolio.yml'
+      - '**.dev-portfolio.yml'
       - '!**.md'
     branches: [ main ]
   pull_request:
     paths:
       - 'dev-portfolio/**'
-      - '.github/workflows/dev-portfolio.yml'
+      - '**.dev-portfolio.yml'
       - '!**.md'
     branches: [ main ]
 
