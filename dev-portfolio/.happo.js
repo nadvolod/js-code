@@ -25,6 +25,11 @@ module.exports = {
       viewport: "390x844",
       freezeAnimations: "last-frame",
     }),
+    // iphone 12 pro
+    "chrome-650": new RemoteBrowserTarget("chrome", {
+      viewport: "650x415",
+      freezeAnimations: "last-frame",
+    }),
     // only works on public urls
     // pages: [{ url: 'http://localhost:3000/', title: 'Home Page' }],
   },
