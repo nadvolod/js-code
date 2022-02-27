@@ -23,3 +23,7 @@ npm i && npm run dev
 For visual testing I had to enable an [ignore threhold](https://docs.happo.io/docs/compare-threshold)
 
 How do we test all of the urls in our app?
+
+### updating npm packages
+
+Use [npm-check](https://koalatea.io/how-to-update-all-your-npm-packages-at-once/)
