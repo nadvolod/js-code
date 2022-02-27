@@ -7,6 +7,7 @@
     "build": "next build && next export",
     "start": "next start",
     "test:visual": "npx happo-e2e -- npx cypress run",
+    "test:jest": "jest",
     "happo": "happo",
     "happo-ci-github-actions": "happo-ci-github-actions"
   },
@@ -22,6 +23,7 @@
   "devDependencies": {
     "happo-cypress": "^3.0.1",
     "happo-e2e": "^1.0.3",
-    "happo.io": "^7.0.2"
+    "happo.io": "^7.0.2",
+    "jest": "^27.5.1"
   }
 }

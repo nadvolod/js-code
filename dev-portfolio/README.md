@@ -21,3 +21,5 @@ npm i && npm run dev
 ### visual testing
 
 For visual testing I had to enable an [ignore threhold](https://docs.happo.io/docs/compare-threshold)
+
+How do we test all of the urls in our app?
