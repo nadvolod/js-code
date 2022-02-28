@@ -28,6 +28,10 @@ What about timelineData.js, do we need to write a snapshot test for it?
 
 - No, since the data appears in our visual tests, it's not necessary
 
+### front-end perf
+
+`cy.lighthouse(), Electron is not supported. Skipping...` error was a result of running Cypress on Electron. Changing to Chrome browser fixed the issue.
+
 ### updating npm packages
 
 Use [npm-check](https://koalatea.io/how-to-update-all-your-npm-packages-at-once/)

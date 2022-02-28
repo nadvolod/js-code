@@ -15,13 +15,20 @@
 /**
  * @type {Cypress.PluginConfig}
  */
-// eslint-disable-next-line no-unused-vars
-module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-};
 const happoTask = require("happo-cypress/task");
-
 module.exports = (on) => {
   happoTask.register(on);
+};
+
+const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
+module.exports = (on, config) => {
+  on("before:browser:launch", (browser = {}, launchOptions) => {
+    prepareAudit(launchOptions);
+  });
+
+  on("task", {
+    lighthouse: lighthouse((lighthouseReport) => {
+      console.log(lighthouseReport); // raw lighthouse reports
+    }),
+  });
 };

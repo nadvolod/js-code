@@ -21,6 +21,8 @@
     "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
+    "@cypress-audit/lighthouse": "^1.2.0",
+    "cypress-audit": "^1.1.0",
     "happo-cypress": "^3.0.1",
     "happo-e2e": "^1.0.3",
     "happo.io": "^7.0.2",
