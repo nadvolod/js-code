@@ -24,6 +24,10 @@ For visual testing I had to enable an [ignore threhold](https://docs.happo.io/do
 
 How do we test all of the urls in our app?
 
+What about timelineData.js, do we need to write a snapshot test for it?
+
+- No, since the data appears in our visual tests, it's not necessary
+
 ### updating npm packages
 
 Use [npm-check](https://koalatea.io/how-to-update-all-your-npm-packages-at-once/)

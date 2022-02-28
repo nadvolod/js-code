@@ -17,9 +17,9 @@ import {
   SectionText,
   SectionTitle,
 } from "../../styles/GlobalComponents";
-import { TimeLineData } from "../../constants/constants";
+import { timelineData } from "../../constants/timelineData";
 
-const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
+const TOTAL_CAROUSEL_COUNT = timelineData.length;
 
 const Timeline = () => {
   const [activeItem, setActiveItem] = useState(0);
@@ -35,7 +35,7 @@ const Timeline = () => {
 
     if (carouselRef.current) {
       const scrollLeft = Math.floor(
-        carouselRef.current.scrollWidth * 0.7 * (i / TimeLineData.length)
+        carouselRef.current.scrollWidth * 0.7 * (i / timelineData.length)
       );
 
       scroll(carouselRef.current, scrollLeft);
@@ -47,7 +47,7 @@ const Timeline = () => {
       const index = Math.round(
         (carouselRef.current.scrollLeft /
           (carouselRef.current.scrollWidth * 0.7)) *
-          TimeLineData.length
+          timelineData.length
       );
 
       setActiveItem(index);
@@ -76,7 +76,7 @@ const Timeline = () => {
         <>
           {/* the 'index' had to be named 'index', otherwise I was getting an error that 'index'
         wasnt defined */}
-          {TimeLineData.map((item, index) => (
+          {timelineData.map((item, index) => (
             <CarouselMobileScrollNode
               key={index}
               final={index === TOTAL_CAROUSEL_COUNT - 1}
@@ -128,7 +128,7 @@ const Timeline = () => {
         </>
       </CarouselContainer>
       <CarouselButtons>
-        {TimeLineData.map((item, index) => (
+        {timelineData.map((item, index) => (
           <CarouselButton
             key={index}
             index={index}
