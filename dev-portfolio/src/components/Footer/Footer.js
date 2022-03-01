@@ -1,36 +1,15 @@
 import React from 'react';
-import SocialDetails from '../Header/SocialDetails';
+import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 
-import {
-	CompanyContainer,
-	FooterWrapper,
-	LinkColumn,
-	LinkItem,
-	LinkList,
-	LinkTitle,
-	Slogan,
-	SocialIconsContainer,
-} from './FooterStyles';
+import { SocialIcons } from '../Header/HeaderStyles';
+import { CompanyContainer, FooterWrapper, LinkColumn, LinkItem, LinkList, LinkTitle, Slogan, SocialContainer, SocialIconsContainer } from './FooterStyles';
 
 const Footer = () => {
-	return (
-		<FooterWrapper>
-			<LinkList>
-				<LinkColumn>
-					<LinkTitle>Email</LinkTitle>
-					<LinkItem href='mailto:nadvolod@gmail.com'>
-						click to email me
-					</LinkItem>
-				</LinkColumn>
-			</LinkList>
-			<SocialIconsContainer>
-				<CompanyContainer>
-					<Slogan>Innovation</Slogan>
-				</CompanyContainer>
-				<SocialDetails></SocialDetails>
-			</SocialIconsContainer>
-		</FooterWrapper>
-	);
+  return (
+    <div>
+      Footer
+    </div>
+  );
 };
 
 export default Footer;
