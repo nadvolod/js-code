@@ -12,16 +12,16 @@ const SocialDetails = () => {
   return (
     <>
       <Div3>
-        <SocialIcons href={socialUrls.github}>
+        <SocialIcons data-testid="github" href={socialUrls.github}>
           <AiFillGithub size="3rem" />
         </SocialIcons>
-        <SocialIcons href={socialUrls.youtube}>
+        <SocialIcons data-testid="youtube" href={socialUrls.youtube}>
           <AiFillYoutube size="3rem" />
         </SocialIcons>
-        <SocialIcons href={socialUrls.linkedIn}>
+        <SocialIcons data-testid="linkedin" href={socialUrls.linkedIn}>
           <AiFillLinkedin size="3rem" />
         </SocialIcons>
-        <SocialIcons href={socialUrls.twitter}>
+        <SocialIcons data-testid="twitter" href={socialUrls.twitter}>
           <AiFillTwitterCircle size="3rem" />
         </SocialIcons>
       </Div3>
