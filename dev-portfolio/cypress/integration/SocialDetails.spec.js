@@ -4,7 +4,6 @@ describe("SocialDetails", () => {
   beforeEach(() => {
     cy.visit("/");
     cy.get("body").should("be.visible");
-    cy.get("body").should("not.have.css", "display", "none");
   });
 
   it("have correct social links", () => {
