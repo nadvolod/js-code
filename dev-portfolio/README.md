@@ -41,6 +41,8 @@ What about timelineData.js, do we need to write a snapshot test for it?
 
 - No, since the data appears in our visual tests, it's not necessary
 
+- Disable running all of the cypress files for visual tests by using [Cypress --spec](https://docs.cypress.io/guides/guides/command-line#cypress-run)
+
 ### functional testing
 
 - how do we test the links in Projects.js?
