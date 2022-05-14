@@ -37,10 +37,10 @@ jobs:
     - name: Unit tests
       run: |
         npm run test:jest
-    - name: Start the app 📤
+    - name: Start the app 🖥️
       #Vite has a different command for deploy than vanilla react
       run: |
-        npm run build
+        npm run start
         npx wait-on --timeout 60000
     - name: Run front-end perf
       run: |
