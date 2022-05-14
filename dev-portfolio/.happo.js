@@ -3,7 +3,7 @@ const { RemoteBrowserTarget } = require("happo.io");
 module.exports = {
   apiKey: process.env.HAPPO_API_KEY,
   apiSecret: process.env.HAPPO_API_SECRET,
-  project: "dev-portfolio",
+  project: "dev-portfolio-tutorial",
   targets: {
     "chrome-1080p": new RemoteBrowserTarget("chrome", {
       viewport: "1920x1080",

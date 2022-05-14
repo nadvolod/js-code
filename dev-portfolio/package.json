@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "test:visual": "npx happo-e2e -- npx cypress run",
+    "test:visual": "npx happo-e2e -- cypress run --spec 'cypress/integration/visual.spec.js'",
     "test:jest": "jest",
     "test:lighthouse": "cypress run --spec 'homepage.spec.js'",
     "happo": "happo",

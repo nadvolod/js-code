@@ -66,6 +66,8 @@ test("Project details are correct", () => {
         "tags": Array [
           "NextJS",
           "Node",
+          "Cypress",
+          "Happo.io",
         ],
         "title": "Dev Portfolio Website",
         "visit": "https://nikolay.tech",
