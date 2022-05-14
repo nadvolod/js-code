@@ -13,7 +13,7 @@ jobs:
   build:
     defaults:
       run:
-        working-directory: ./dev-portfolio/
+        working-directory: dev-portfolio/
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -34,11 +34,17 @@ jobs:
       run: |
         ls -a
         npm run build
+    - name: Unit tests
+      run: |
+        npm run test:jest
     - name: Start the app 📤
       #Vite has a different command for deploy than vanilla react
       run: |
         npm run build
         npx wait-on --timeout 60000
+    - name: Run front-end perf
+      run: |
+        npm run test:lighthouse
     - name: Run visual tests 👁
       run: |
         npm run test:visual
