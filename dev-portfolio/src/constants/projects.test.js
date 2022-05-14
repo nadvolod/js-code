@@ -29,7 +29,7 @@ test("Project details are correct", () => {
           "CypressIO",
         ],
         "title": "Github User Search",
-        "visit": "https://61d9fb1e9d115dbf5b790ad4--distracted-wilson-20a730.netlify.app/",
+        "visit": "https://gh-users-search.netlify.app/",
       },
       Object {
         "description": "Co-created an open source project that allows users to interact with Sauce Labs through a beautiful API.",

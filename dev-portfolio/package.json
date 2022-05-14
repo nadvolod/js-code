@@ -8,6 +8,7 @@
     "start": "next start",
     "test:visual": "npx happo-e2e -- npx cypress run",
     "test:jest": "jest",
+    "test:lighthouse": "cypress run --spec 'homepage.spec.js'",
     "happo": "happo",
     "happo-ci-github-actions": "happo-ci-github-actions"
   },
