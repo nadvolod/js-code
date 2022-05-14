@@ -16,7 +16,7 @@ const projects = [
         image: '/images/github-users-search.webp',
         tags: ['React', 'REST API', 'Netlify', 'CypressIO'],
         source: 'https://github.com/nadvolod/js-code/tree/master/github-user-search',
-        visit: 'https://61d9fb1e9d115dbf5b790ad4--distracted-wilson-20a730.netlify.app/',
+        visit: 'https://gh-users-search.netlify.app/',
         id: 1,
     },
     {

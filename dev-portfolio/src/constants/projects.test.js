@@ -1,13 +1,13 @@
 // this was the only way that I could get the test to work
-const { projects } = require("./projects");
+const { projects } = require('./projects')
 
-test("Project details are correct", () => {
-  expect(projects).toMatchInlineSnapshot(`
+test('Project details are correct', () => {
+    expect(projects).toMatchInlineSnapshot(`
     Array [
       Object {
         "description": "Created a community of 100K+ developers and SDETS to help each other create better code.",
         "id": 0,
-        "image": "/images/ultimateqa.png",
+        "image": "/images/ultimateqa.webp",
         "source": "#",
         "tags": Array [
           "Wordpress",
@@ -34,7 +34,7 @@ test("Project details are correct", () => {
       Object {
         "description": "Co-created an open source project that allows users to interact with Sauce Labs through a beautiful API.",
         "id": 2,
-        "image": "/images/sauce-bindings.png",
+        "image": "/images/sauce-bindings.webp",
         "source": "https://github.com/saucelabs/sauce_bindings",
         "tags": Array [
           "Java",
@@ -47,7 +47,7 @@ test("Project details are correct", () => {
       Object {
         "description": "A simple app that allows users to track their friends' birthdays.",
         "id": 3,
-        "image": "/images/birthday-reminder.jpeg",
+        "image": "/images/birthday-reminder.webp",
         "source": "https://github.com/nadvolod/js-code/tree/master/birthday-reminder",
         "tags": Array [
           "React",
@@ -61,7 +61,7 @@ test("Project details are correct", () => {
       Object {
         "description": "A mobile-first, responsive, sleek website to show off my skills.",
         "id": 4,
-        "image": "/images/portfolio.png",
+        "image": "/images/portfolio.webp",
         "source": "https://github.com/nadvolod/js-code/tree/master/dev-portfolio",
         "tags": Array [
           "NextJS",
@@ -73,5 +73,5 @@ test("Project details are correct", () => {
         "visit": "https://nikolay.tech",
       },
     ]
-  `);
-});
+  `)
+})
