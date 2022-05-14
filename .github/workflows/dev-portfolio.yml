@@ -29,19 +29,14 @@ jobs:
       #Using npm ci is generally faster than running npm install
       run: |
         ls -a
-        npm install
-    - name: Build the app for prod 🏗
-      run: |
-        ls -a
-        npm run build
+        npm ci
     - name: Unit tests
       run: |
         npm run test:jest
-    - name: Start the app 🖥️
-      #Vite has a different command for deploy than vanilla react
+    - name: Build the app for prod 🏗
       run: |
-        npm run start
-        npx wait-on --timeout 60000
+        ls -a
+        npm run build && npm run start
     - name: Run front-end perf
       run: |
         npm run test:lighthouse
