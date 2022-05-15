@@ -20,7 +20,7 @@ test('Project details are correct', () => {
       Object {
         "description": "Created a web application that allows users to search for Github users and see their profile information. Tested and deployed.",
         "id": 1,
-        "image": "/images/github-users-search.png",
+        "image": "/images/github-users-search.webp",
         "source": "https://github.com/nadvolod/js-code/tree/master/github-user-search",
         "tags": Array [
           "React",
