@@ -54,3 +54,7 @@ What about timelineData.js, do we need to write a snapshot test for it?
 ### updating npm packages
 
 Use [npm-check](https://koalatea.io/how-to-update-all-your-npm-packages-at-once)
+
+## Inspired by
+
+⭐ Huge thanks to [JS Mastery for the tutorial](https://youtu.be/OPaLnMw2i_0) ⭐
