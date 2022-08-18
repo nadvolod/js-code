@@ -18,6 +18,10 @@ You will analyze risks and how to prevent those risks with e2e testing, componen
 
 😉 And maybe more...
 
+## 🔧 Prerequisites
+
+1. Knowledge of JavaScript
+
 ## 🔧Technologies you will use
 
 1. ReactJS
