@@ -8,13 +8,11 @@
 
 ## SUT
 
-Let's quickly explore the software that we will test.
+🛑 Work in progress 🛑
 
-1. Download Edge browser (our demo app is not working correctly in chrome)
-2. Open the demo app at `https://www.saucedemo.com/v1`
-* **The app has some old issues and you will need to open in Incognito Chrome or on Edge. The same thing will apply when we test it with Cypress.**
-4. Try a login (the login works by setting session storage)
-5. Try to add a product
+1. Need to integrate the new Sauce Demo atomic test
+2. Add a login test through JWT https://github.com/saucelabs-training/automation-best-practices/blob/main/login-testing/LOGINS.md#json-web-token-jwt
+3. Should I do SSO? https://github.com/nadvolod/cypress-example-recipes/tree/master/examples
 
 ## Automated atomic tests
 
@@ -28,8 +26,6 @@ Furthermore, AATs meet several requirements of [good tests as specified by Kent 
 
 ✅ Fast
 
-
-
 As an aside, this concept is already well understood in unit and integration tests, but UI tests continue to lag behind.
 
 ## ❓Is this test atomic❓
@@ -37,24 +33,18 @@ As an aside, this concept is already well understood in unit and integration tes
 ```js
 
 /// <reference types="cypress" />
-import ProductsPage from '../page-objects/ProductsPage';
-import AppHeader from '../page-objects/AppHeaderPage';
-import LoginPage from '../page-objects/LoginPage'
-import {LOGIN_USERS} from "../support/e2eConstants";
+import LoginPage from '../page-objects/LoginPage';
+import SwagOverviewPage from '../page-objects/SwagOverviewPage';
+import { LOGIN_USERS } from '../support/e2eConstants';
 
-describe('Shopping cart', () => {
+describe('LoginPage', () => {
   beforeEach(() => {
-      cy.visit('https://www.saucedemo.com/v1');
-      cy.window().then((win) => {
-          win.sessionStorage.clear()
-        });
-    });
+    cy.visit('');
+  });
 
-  it('should add item to cart', () => {
-      LoginPage.signIn(LOGIN_USERS.STANDARD);
-      ProductsPage.screen.should('be.visible');
-      ProductsPage.addItemToCart(0);
-      AppHeader.cart.should('have.text', '1');
+  it('should be able to login with a standard user', () => {
+    LoginPage.signIn(LOGIN_USERS.STANDARD);
+    SwagOverviewPage.screen.should('be.visible');
   });
 });
 
