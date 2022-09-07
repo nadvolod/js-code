@@ -6,34 +6,28 @@ In this workshop you will learn how to do automated API testing with Cypress 10.
 
 ## 🧠 You will learn
 
-✅ how to test a React web app using different types of tests
+✅ Common HTTP methods
 
-✅ E2E ui tests w/ Cypress 10
+✅ How to execute web requests
 
-✅ Component testing w/ Cypress 10
-
-✅ CICD with Github Actions
+✅ Basic and advanced API automation
 
 😉 And maybe more...
 
 ## 🔧 Prerequisites
 
 1. Knowledge of JavaScript
+2. Basic understanding of JavaScript
 
-## 🔧Technologies you will use
+## 👩‍💻 Technologies you will use
 
-1. ReactJS
-2. Cypress 10
-3. Github Actions
+1. Cypress 10
+2. JavaScript
 
 ## Table Of Contents
 
 - Setup
 - [API Testing](./docs/API.md)
-- [E2E UI testing w/ Cypress](./docs/E2E-TESTS.md)
-- Break ☕
-- [Visual e2e testing](./docs/VISUAL.md)
-- [CICD](./my-react-app/docs/CICD.md)
 - [Conclusions](./docs/CONCLUSIONS.md)
 
 ## Testing for Good
