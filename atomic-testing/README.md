@@ -4,7 +4,7 @@
 
 <img width="500" height="300" alt="AAT" src="https://media.giphy.com/media/xj7dVmF9OS11K/giphy.gif">
 
-An automated atomic test (AAT) is one that tests only a single feature or component. AAT have very few UI interactions and typically touch a maximum of two screens. The "typical" UI end-to-end tests break the AAT pattern.
+An automated atomic test (AAT) checks only a single feature or component. AAT has very few UI interactions and typically touches a maximum of two screens. The “typical” UI end-to-end tests break the AAT pattern.
 
 Furthermore, AATs meet several requirements of good tests as specified by Kent Beck
 
