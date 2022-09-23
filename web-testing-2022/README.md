@@ -20,7 +20,8 @@ You will analyze risks and how to prevent those risks with e2e testing, componen
 
 ## 🔧 Prerequisites
 
-1. Knowledge of JavaScript
+1. Experience JavaScript + Node.js
+
 
 ## 🔧Technologies you will use
 
