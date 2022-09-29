@@ -10,9 +10,14 @@ Check if you have an app running on `http://localhost:3000/`. If so, you are rea
 
 If not, then
 
-2. Open a terminal at the same place as the `package.json`
-3. `npm start` to start the web app
-4. Open application at http://localhost:3000/
+1. Open a terminal
+
+```bash
+cd web-testing-2022/
+npm start
+```
+
+1. Open application at http://localhost:3000/
 
 ## 🧪Our Testing Strategy
 
