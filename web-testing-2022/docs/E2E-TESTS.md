@@ -10,26 +10,23 @@ Check if you have an app running on `http://localhost:3000/`. If so, you are rea
 
 If not, then
 
-1. Open a terminal
+Open a terminal
 
 ```bash
 cd web-testing-2022/
 npm start
 ```
 
-1. Open application at http://localhost:3000/
+Open application at http://localhost:3000/
 
-## 🧪Our Testing Strategy
+## ❓Let's define Our Test Strategy
 
 [Software under test](http://localhost:3000/)
 
-[Look here](TEST-COVERAGE.md)
+[Test strategy](https://docs.google.com/spreadsheets/d/1bFqZIvzbrjjQuWsMVvRKSq7J-Dog8q8ocixXAonnjxk/edit?usp=sharing)
 
----
-
-## ❓What is the most basic test that we can write for our application?
-
----
+- ❓What is the most basic test that we can code for our application?
+- ❓What other tests can we code?
 
 ## Cypress Overview
 
@@ -41,73 +38,17 @@ In new terminal, without stopping the web app
 npx cypress open
 ```
 
-💡 Tests live in `cypress/integration` folder
+💡 Tests live in `cypress/e2e` folder
 
-### 🏋️‍♀️Write a Cypress test to make sure that our app opens.
+### 🏋️‍♀️ Code a Cypress test to make sure that our app opens.
 
-1. In your IDE open `cypress/integration/e2e/exercise.spec.js`
+1. In your IDE open `cypress/e2e/exercise.cy.js`
 2. Follow instructions to implement `it('loads')` test
 
----
+### 🏋️‍♀️Code a test to ensure that the link will go to the correct location
 
-### ❓What does this test validate?
-
----
-
-## 🧪Current Test Coverage
-
-[Look here](TEST-COVERAGE.md)
-
----
-
-### ❓How do we ensure that the link is correct?
-
----
-
-## 🔗Testing links (the right way)
-
-Here's an e2e test to validate that a link works
-
-```js
-it('should click link', () => {
-  cy.visit('/');
-  cy.get('.App-link').click().url().should('contain', 'ultimateqa.com');
-});
-```
-
----
-
-### ❓What is the problem with this test❓
-
----
-
-<br/>
-  <details>
-    <summary>
-      <strong>Click here</strong> to see answer.
-    </summary>
-
-1. We should never need to test that a link is clickable, this is the browser's native behavior
-2. We should never need to test that a link opens a new tab
-
-  </details>
-
-</br>
-
-### 🏋️‍♀️Write a test to ensure that the link will go to the correct location
-
-1. In your IDE open `cypress/integration/exercise.spec.js`
+1. In your IDE open `cypress/e2e/exercise.spec.js`
 2. Follow instructions to implement `it('link goes to ultimateqa')` test
-
----
-
-❓What is the exact validation of this test❓
-
----
-
-## 🧪Current Test Coverage
-
-[Look here](TEST-COVERAGE.md)
 
 ## How to test that the link opens in a new tab?
 
@@ -173,7 +114,7 @@ Using component tests
 
 ✅ We can test a link by checking the `href` attribute
 
-✅ We can test that a url opens by checking that `target='_blank'`
+✅ We can test that a url opens a new tab with `target='_blank'`
 
 ## ⏭️ [Let's continue to expand our coverage](VISUAL.md)
 
