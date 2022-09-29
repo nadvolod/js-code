@@ -50,11 +50,7 @@ npx cypress open
 1. In your IDE open `cypress/e2e/exercise.spec.js`
 2. Follow instructions to implement `it('link goes to ultimateqa')` test
 
-## How to test that the link opens in a new tab?
-
-👀 Working with 'target' attribute
-
-🏋️‍♀️Write a functional ui test to validate that the link opens in a new tab
+### 🏋️‍♀️Write a functional ui test to validate that the link opens in a new tab
 
 - Follow instructions in this test `it('should open link in new tab')`
 
@@ -99,10 +95,11 @@ npx cypress open
 
 Using component tests
 
-[How to run a component test](https://youtu.be/VQLf1pLWDjc?t=166) followed by
-[How to create a test for a link](https://youtu.be/VQLf1pLWDjc?t=821)
-
-[Examples of using component tests](https://github.com/nadvolod/testing-best-practices#testing-a-button)
+- Cypress 10 component testing workshop by Gleb Bahmutov on Oct 19th 10AM EST.
+- [How to run a component test w/ Jest](https://youtu.be/VQLf1pLWDjc?t=166) followed by
+- [How to create a componet test for a link w/ Jest](https://youtu.be/VQLf1pLWDjc?t=821)
+- [Cypress 10 component testing tutorial](https://youtu.be/aNqLTG1fya4)
+- [Examples of using component tests](https://github.com/nadvolod/testing-best-practices#testing-a-button)
 
   </details>
 
@@ -120,4 +117,4 @@ Using component tests
 
 ## 🧠Expand your knowledge
 
-[Building and testing web applications tutorials](https://www.youtube.com/playlist?list=PLSRQwlkmpdj5ak1Rxahdo6mguhbcCOePR)
+[Coding and testing web applications tutorial](https://www.youtube.com/playlist?list=PLSRQwlkmpdj5ak1Rxahdo6mguhbcCOePR)

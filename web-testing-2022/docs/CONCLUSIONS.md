@@ -27,3 +27,11 @@
 - [Build and test a Github users search app tutorial](https://youtu.be/EvZ6pjgYA38)
 - [What is REST blog post](https://restfulapi.net/)
 - [API testing in JavaScript tutorial](https://testautomationu.applitools.com/javascript-api-testing/)
+
+### Component Testing
+
+- Cypress 10 component testing workshop by Gleb Bahmutov on Oct 19th 10AM EST.
+- [Cypress 10 component testing tutorial](https://youtu.be/aNqLTG1fya4)
+- [How to run a component test w/ Jest](https://youtu.be/VQLf1pLWDjc?t=166) followed by
+- [How to create a componet test for a link w/ Jest](https://youtu.be/VQLf1pLWDjc?t=821)
+- [Examples of using component tests](https://github.com/nadvolod/testing-best-practices#testing-a-button)
