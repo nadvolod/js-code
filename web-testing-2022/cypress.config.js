@@ -5,7 +5,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl: 'https://www.saucedemo.com',
+    baseUrl: 'http://localhost:3000',
     'chromeWebSecurity': false,
     'failOnStatusCode': false,
     'experimentalSessionSupport': true,
