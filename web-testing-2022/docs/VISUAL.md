@@ -39,31 +39,14 @@ follow setup instructions
 
 [Let's fill out the Test coverage](./TEST-COVERAGE.md)
 
----
+## 📝 Visual gotchas
 
-### 🏋️‍♀️❓ Let's change our image, what tests should that break❓
-
----
-
-We're going to update the React image to something better. What tests should break?
-
-1. Drag'n drop a new image to the `/src` folder
-2. In `App.js`, Fix the path of the image to match your new image name `import logo from './mia.jpg';`
-3. Save all files
-4. Stop the React app `ctrl + C` in the server terminal
-5. Restart the app with `npm start`
-6. Rerun the visual tests with `npm run test:visual`
-7. Notice the results in your terminal
-
-## 🏋️‍♀️ How can you make the tests also run on Safari desktop and Safari mobile resolutions?
-
-1. Do it
-2. Rerun visual tests `npm run test:visual`
+- Animations such as spinners and carousels
+- Lazy loading
+- Long pages
 
 ## 📝Summary
 
 ✅Visual e2e testing is a simple and efficient way to ensure visual consistency cross-platform and cross-OS
-
-✅We used WebdriverIO + Screener.io to write our visual e2e tests
 
 ## ⏭️[Let's make our tests run in CI](./CICD.md)
