@@ -12,16 +12,6 @@
 
 ---
 
-## 🧪Current Test Coverage
-
-[Look here](TEST-COVERAGE.md)
-
----
-
-## ❓How do we check to make sure that the app looks as expected on web and mobile?
-
----
-
 [Let's take a look](visual-testing.pdf)
 
 ### Advantages of visual tests
@@ -36,38 +26,16 @@
 
 ✅ Can help reduce the size of e2e suite
 
-## Our tools
+## Our visual tools
 
-### [WebdriverIO](https://webdriver.io/)
-
-Next-gen browser and mobile automation test framework for Node.js
-
-### [Screener](https://screener.io/)
-
-Automatically detect visual regressions across your UI
+### [Happo.io](https://happo.io/)
 
 ## 🏋️‍♀️Set up a visual test
 
-follow along
+follow setup instructions
 
-1. Go to file `/test/specs/visual.exercise.spec.js`
-2. Paste the following code
-
-```javascript
-describe('My app', () => {
-  it('should look correct', async () => {
-    await browser.url('');
-    await browser.execute('/*@visual.init*/', 'My React App');
-    await browser.execute('/*@visual.snapshot*/', 'Home Page');
-
-    const result = await browser.execute('/*@visual.end*/');
-    expect(result.message).toBeNull();
-  });
-});
-```
-
-3. In your terminal `npm run test:visual`
-4. View the execution in Saucelabs.com
+1. Sign up for a [free 30 day trial](https://happo.io/signup)
+2. [Setup with Cypress](https://docs.happo.io/docs/cypress)
 
 [Let's fill out the Test coverage](./TEST-COVERAGE.md)
 

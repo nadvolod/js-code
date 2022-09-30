@@ -101,6 +101,12 @@ Using component tests
 
 </br>
 
+---
+
+### ❓What risks remain in our web app?
+
+---
+
 ## 📝Summary
 
 ✅ E2E UI testing with Cypress allows us to do functional testing of the web app
