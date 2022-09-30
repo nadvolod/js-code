@@ -54,10 +54,6 @@ npx cypress open
 
 - Follow instructions in this test `it('should open link in new tab')`
 
-## 🧪Current Test Coverage
-
-[Look here](TEST-COVERAGE.md)
-
 ---
 
 ### ❓What are some challenges of functional UI tests?

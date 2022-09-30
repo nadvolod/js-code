@@ -87,9 +87,6 @@
     "dot-notation": 1,
     // encourages use of dot notation whenever possible
     "eqeqeq": [1, "allow-null"],
-    "globals": {
-        "cy": 0
-    },
     // require the use of === and !==
     "guard-for-in": 0,
     // make sure for-in loops have an if statement (off by default)
