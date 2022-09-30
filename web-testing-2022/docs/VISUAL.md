@@ -36,8 +36,23 @@ follow setup instructions
 
 1. Sign up for a [free 30 day trial](https://happo.io/signup)
 2. [Setup with Cypress](https://docs.happo.io/docs/cypress)
+3. Run visual tests
+4. Run a single visual test using `npm run test:visual`
 
-[Let's fill out the Test coverage](./TEST-COVERAGE.md)
+---
+
+### ❓What does this test validate? Is there more that we should check?
+
+---
+
+## 🏋️‍♀️Set up cross-platform and cross-browser visual tests
+
+- [setting up different targets with happo](https://docs.happo.io/docs/configuration#targets)
+- [viewport sizes](https://viewportsizer.com/devices/)
+
+1. Run on safari on iPhone 12 Pro viewport size
+2. Run on Samsung Galaxy S10+
+3. Run on Chrome on iphone 12 pro viewport
 
 ---
 
