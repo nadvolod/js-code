@@ -3,6 +3,9 @@
     "browser": true,
     "node": true
   },
+  "globals": {
+    "cy": true
+  },
   // parser not working w/ react
   // "parser": "babel-eslint",
   "parserOptions": {

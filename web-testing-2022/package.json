@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test.atomic.checkout": "cypress run --spec \"cypress/e2e/checkout.cy.js\" --browser chrome"
+    "test:visual": "npx happo-e2e -- npx cypress run --spec 'cypress/e2e/visual.cy.js'"
   },
   "eslintConfig": {
     "extends": [
