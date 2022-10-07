@@ -21,6 +21,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "happo": "happo",
+    "happo-ci-github-actions": "happo-ci-github-actions",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test:cy:ci": "npx cypress run --spec '**/**/solution.cy.js' --browser=chrome",

@@ -191,41 +191,6 @@ nvm alias default 16.14.x #to set it to the default
 git clone URL_OF_YOUR_FORK
 ```
 
-4. **Navigate to the directory of where you cloned your repo**
-
-```bash
-cd YOUR_FORK_DIR/comprehensive-testing-js
-```
-
-### 3. Install dependencies and start the application
-
-- While inside your 'comprehensive-testing-js' directory, run the following command to install all dependencies
-
-```bash
-npm install
-```
-
-- After the dependency installation has completed, start the application by running the following:
-
-```bash
-npm run start
-```
-
-### 4.Follow the rest of the setup instructions
-
-Follow the [same steps](#Run-tests) for running tests.
-
-ℹ️ The main difference is that you will set environmenta variables by [following these instructions](https://docs.saucelabs.com/basics/environment-variables/#setting-up-environment-variables) depending on your OS.
-
-ℹ️ Some individuals aren't allowed to set their environment variables on their machines (Employer policy). In that case, you can hardcode them by modifying
-
-- [3 visual keys](https://github.com/saucelabs-training/comprehensive-testing-js/blob/9309d16a9cf56dd14607b9e4c478f3b2f698e9d8/wdio.visual.conf.js#L2-L9)
-- [2 keys for functional tests](https://github.com/saucelabs-training/comprehensive-testing-js/blob/9309d16a9cf56dd14607b9e4c478f3b2f698e9d8/wdio.sanity.conf.js#L9-L10)
-
-You will need to hardcode these values as we do exercises.
-
-### 5.Have an IDE installed that can handle NodeJS/JS (We will use [VSCode](https://code.visualstudio.com/Download))
-
 #### ✅👏Congratulations, your local environment is ready!
 
 ## Prizes
