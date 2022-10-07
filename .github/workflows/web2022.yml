@@ -1,9 +1,21 @@
 name: Web testing CI
 on:
   push:
-    branches: [master]
+  # Only trigger if files in this path changed
+    paths:
+    - 'web-testing-2022/**'
+    - '.github/workflows/web2022.yml'
+    # Don't run on Markdown changes
+    - '!**.md'
+    branches: [ master ]
   pull_request:
-    branches: [master]
+  # Only trigger if files in this path changed
+    paths:
+    - 'web-testing-2022/**'
+    - '.github/workflows/web2022.yml'
+    # Don't run on Markdown changes
+    - '!**.md'
+    branches: [ master ]
 jobs:
   happo:
     runs-on: ubuntu-latest
