@@ -112,11 +112,9 @@ The safest way to ensure that we all have the same environment is for us to [use
 - click the Fork in the upper right of the Github.
 - Give the repo a ⭐ or you can't participate in the workshop😝
 
-3. In the browser address bar, prepend the current GitHub url with `https://gitpod.io/#`
-
-   - The resulting url should look as follows:
-
-     > https://gitpod.io/#https://github.com/YOUR-USERNAME/REPO-URL
+3. Click here
+     
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/nadvolod/js-code/tree/master/web-testing-2022)
 
 4. Once the Gitpod.io URL is loaded, you will need to sign in with the GitHub account you created earlier
 
