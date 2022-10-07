@@ -17,8 +17,11 @@ on:
     - '!**.md'
     branches: [ master ]
 jobs:
-  happo:
+  build-test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./web-testing-2022/
     steps:
       - uses: actions/checkout@v2
         with:
