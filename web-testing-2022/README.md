@@ -12,7 +12,7 @@ You will analyze risks and how to prevent those risks with e2e testing, componen
 
 ✅ E2E ui tests w/ Cypress 10
 
-✅ Component testing w/ Cypress 10
+✅ Visual testing w/ Cypress 10 and Happo.io
 
 ✅ CICD with Github Actions
 
@@ -27,15 +27,14 @@ You will analyze risks and how to prevent those risks with e2e testing, componen
 
 1. ReactJS
 2. Cypress 10
-3. Github Actions
+3. Happo.io visual testing
 
 ## Table Of Contents
 
 - Setup
-- [API Testing](./docs/API.md)
 - [E2E UI testing w/ Cypress](./docs/E2E-TESTS.md)
-- Break ☕
 - [Visual e2e testing](./docs/VISUAL.md)
+- Break ☕
 - [CICD](./my-react-app/docs/CICD.md)
 - [Conclusions](./docs/CONCLUSIONS.md)
 
@@ -82,14 +81,12 @@ Anything helps!
 - 😄 Pronouns: he/him
 - ⚡ Fun fact: I'm a vegan that's super pasionate about saving the planet, saving animals, and helping underpriveleged communities
 - 📫 Follow me for testing and dev training
-  - [JS Testing Newsletter](https://ultimateqa.ck.page/js-testing-tips)
+  - [JS Testing Tips Newsletter](https://ultimateqa.ck.page/js-testing-tips)
   - [Testing training on Youtube](https://youtube.com/ultimateqa)
   - [LinkedIn for professional connections](https://www.linkedin.com/in/nikolayadvolodkin/)
-  - [Twitter for 🔥 Dev quotes](https://twitter.com/Nikolay_A00)
+  - [Twitter for 🔥 Dev quotes](https://twitter.com/intent/follow?screen_name=nikolay_a00&region=follow_link)
 
-## TA 1: Chris Eccleston
-
-## TA 2: Aleks Shineleva
+## TA 1
 
 ## ⚙️ Setup
 
@@ -97,29 +94,8 @@ The safest way to ensure that we all have the same environment is for us to [use
 
 ### Sign up for accounts
 
-1. Free [Sauce account](https://saucelabs.com/sign-up)
-
-### Get your username and api key
-
-1. Save your Sauce Labs Username and Access Key by going to the [Sauce Labs user settings page](https://app.saucelabs.com/user-settings)
-
-ℹ️ If you have a Screener.io account then do the step below. Otherwise, just copy one of the demo API Keys.
-  - Save your Screener API Key by going to the [API key](https://screener.io/v2/account/api-key) page in your Screener settings
-     - Need to sign up for [demo account before](https://saucelabs.com/demo-request-vt)
-
-🚨 **If you don't get an API key before the workshop, please use one of the keys below** 🚨
-
-SCREENER_API_KEY:
-
-`34c95634-56fc-446e-b68e-20530262e3f4`
-
-`fe5a0636-fde5-4209-a597-403a76f1b505`
-
-`6b3cc9f4-4578-413c-b5cc-ed7d1b417981`
-
-`6b3cc9f4-4578-413c-b5cc-ed7d1b417981`
-
-`8368adee-4463-4aa4-a441-6e6c58d67665`
+1. Free [Happo.io account]()
+1. Free [Github account](https://github.com/signup)
 
 ---
 
@@ -140,7 +116,7 @@ SCREENER_API_KEY:
 
    - The resulting url should look as follows:
 
-     > https://gitpod.io/#https://github.com/YOUR-USERNAME/comprehensive-testing-js
+     > https://gitpod.io/#https://github.com/YOUR-USERNAME/REPO-URL
 
 4. Once the Gitpod.io URL is loaded, you will need to sign in with the GitHub account you created earlier
 
