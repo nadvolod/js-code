@@ -124,26 +124,22 @@ The safest way to ensure that we all have the same environment is for us to [use
 
 ### Set your env variables
 
-In a new terminal, run the following commands in that Terminal to set your `SAUCE_USERNAME`, `SAUCE_ACCESS_KEY`, and `SCREENER_API_KEY`:
+In a new terminal, run the following commands in that Terminal to set your `HAPPO_API_KEY`, `HAPPO_API_SECRET`:
+
+[Happo api keys](https://docs.happo.io/docs/configuration#apikey-and-apisecret)
 
 ```bash
-eval $(gp env -e SAUCE_USERNAME=<sauce_username>)
+eval $(gp env -e HAPPO_API_KEY=<key>)
 ```
 ```bash
-eval $(gp env -e SAUCE_ACCESS_KEY=<sauce_access_key>)
+eval $(gp env -e HAPPO_API_SECRET=<secret>)
 ```
-```bash
-eval $(gp env -e SCREENER_API_KEY=<screener_api_key>)
-```
-
-> Replace <sauce_username>, <sauce_access_key>, and <screener_api_key> with your credentials
 
 Once you have run those 3 commands, you can run the following commands to test your environment variables:
 
 ```bash
-echo $SAUCE_USERNAME
-echo $SAUCE_ACCESS_KEY
-echo $SCREENER_API_KEY
+echo $HAPPO_API_KEY
+echo $HAPPO_API_SECRET
 ```
 
 ### ✅ Your values should come back as expected
@@ -155,13 +151,7 @@ Run sanity tests
 If your tests run in US Datacenter
 
 ```bash
-npm run test:sanity:us
-```
-
-If your tests run in EU Datacenter
-
-```bash
-npm run test:sanity:eu
+npm run test:cy:sanity
 ```
 
 ### ✅👏Environment setup is complete if tests passed
