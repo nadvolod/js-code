@@ -27,15 +27,28 @@ jobs:
         with:
           fetch-depth: 100
       - uses: actions/setup-node@v1
-      - name: Install dependencies 📦
-        #Using npm ci is generally faster than running npm install
-        run: |
-          ls -a
-          npm ci
-      - name: Start the app
-        run: |
-          npm start &
-          npx wait-on --timeout 60000
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          build: npm run build
+          start: npm start
+          browser: chrome
+          command-prefix: npx happo-e2e -- npx
+        env:
+          # Inject secrets to the build
+          HAPPO_API_KEY: ${{ secrets.HAPPO_API_KEY }}
+          HAPPO_API_SECRET: ${{ secrets.HAPPO_API_SECRET }}
+#       - name: Install dependencies 📦
+#         #Using npm ci is generally faster than running npm install
+#         run: |
+#           ls -a
+#           npm ci
+#       - name: Start the app
+#         run: |
+#           npm start &
+#           npx wait-on --timeout 60000
 #       - name: Run cypress
 #         uses: cypress-io/github-action@v2
 #         with:
@@ -44,12 +57,9 @@ jobs:
 #           # Inject secrets to the build
 #           HAPPO_API_KEY: ${{ secrets.HAPPO_API_KEY }}
 #           HAPPO_API_SECRET: ${{ secrets.HAPPO_API_SECRET }}
-      - name: Run e2e tests
-        run: |
-          npm run test:cy:sanity
-        env:
-          HAPPO_API_KEY: ${{ secrets.HAPPO_API_KEY }}
-          HAPPO_API_SECRET: ${{ secrets.HAPPO_API_SECRET }}
+#       - name: Run e2e tests
+#         run: |
+#           npm run test:cy:sanity
       - name: Run visual tests 👁
         run: |
           ls -a
