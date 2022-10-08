@@ -36,6 +36,14 @@ jobs:
         run: |
           npm start &
           npx wait-on --timeout 60000
+      - name: Run cypress
+        uses: cypress-io/github-action@v2
+        with:
+          command-prefix: npx happo-e2e -- npx
+        env:
+          # Inject secrets to the build
+          HAPPO_API_KEY: ${{ secrets.HAPPO_API_KEY }}
+          HAPPO_API_SECRET: ${{ secrets.HAPPO_API_SECRET }}
       - name: Run visual tests 👁
         run: |
           npm run test:visual
