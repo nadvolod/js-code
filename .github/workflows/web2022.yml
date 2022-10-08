@@ -1,4 +1,4 @@
-name: Web testing CI
+name: Web testing 2022
 on:
   push:
   # Only trigger if files in this path changed
@@ -27,8 +27,17 @@ jobs:
         with:
           fetch-depth: 100
       - uses: actions/setup-node@v1
-      - run: npm ci
-      - run: npm run happo-ci-github-actions
+      - name: Install dependencies 📦
+        #Using npm ci is generally faster than running npm install
+        run: |
+          ls -a
+          npm ci
+      - name: Build the app for prod 🏗
+        run: |
+          npm run build && npm run start
+      - name: Run visual tests 👁
+        run: |
+          npm run test:visual
         env:
           HAPPO_API_KEY: ${{ secrets.HAPPO_API_KEY }}
           HAPPO_API_SECRET: ${{ secrets.HAPPO_API_SECRET }}
