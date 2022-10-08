@@ -5,8 +5,20 @@ name: Dev Portfolio CI
 
 on:
   push:
+  # Only trigger if files in this path changed
+    paths:
+    - 'dev-portfolio/**'
+    - '.github/workflows/dev-portfolio.yml'
+    # Don't run on Markdown changes
+    - '!**.md'
     branches: [ master ]
   pull_request:
+  # Only trigger if files in this path changed
+    paths:
+    - 'dev-portfolio/**'
+    - '.github/workflows/dev-portfolio.yml'
+    # Don't run on Markdown changes
+    - '!**.md'
     branches: [ master ]
 
 jobs:
