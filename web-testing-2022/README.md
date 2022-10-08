@@ -94,7 +94,7 @@ The safest way to ensure that we all have the same environment is for us to [use
 
 ### Sign up for accounts
 
-1. Free [Happo.io account]()
+1. Free [Happo.io account](https://happo.io/signup?_aid=802)
 1. Free [Github account](https://github.com/signup)
 
 ---
