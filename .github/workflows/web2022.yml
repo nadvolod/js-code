@@ -29,27 +29,27 @@ jobs:
       - uses: actions/setup-node@v1
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
-        with:
-          build: npm run build
-          start: npm start
-          browser: chrome
-          command-prefix: npx happo-e2e -- npx
-          working-directory: web-testing-2022
-        env:
-          # Inject secrets to the build
-          HAPPO_API_KEY: ${{ secrets.HAPPO_API_KEY }}
-          HAPPO_API_SECRET: ${{ secrets.HAPPO_API_SECRET }}
-#       - name: Install dependencies 📦
-#         #Using npm ci is generally faster than running npm install
-#         run: |
-#           ls -a
-#           npm ci
-#       - name: Start the app
-#         run: |
-#           npm start &
-#           npx wait-on --timeout 60000
+#       - name: Cypress run
+#         uses: cypress-io/github-action@v4
+#         with:
+#           build: npm run build
+#           start: npm start
+#           browser: chrome
+#           command-prefix: npx happo-e2e -- npx
+#           working-directory: web-testing-2022
+#         env:
+#           # Inject secrets to the build
+#           HAPPO_API_KEY: ${{ secrets.HAPPO_API_KEY }}
+#           HAPPO_API_SECRET: ${{ secrets.HAPPO_API_SECRET }}
+      - name: Install dependencies 📦
+        #Using npm ci is generally faster than running npm install
+        run: |
+          ls -a
+          npm ci
+      - name: Start the app
+        run: |
+          npm start &
+          npx wait-on --timeout 60000
 #       - name: Run cypress
 #         uses: cypress-io/github-action@v2
 #         with:
