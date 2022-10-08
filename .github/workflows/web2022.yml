@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./web-testing-2022/
+        working-directory: web-testing-2022
     steps:
       - uses: actions/checkout@v2
         with:
@@ -46,6 +46,7 @@ jobs:
           HAPPO_API_SECRET: ${{ secrets.HAPPO_API_SECRET }}
       - name: Run visual tests 👁
         run: |
+          ls -a
           npm run test:visual
         env:
           HAPPO_API_KEY: ${{ secrets.HAPPO_API_KEY }}
