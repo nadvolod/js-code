@@ -34,7 +34,7 @@
 
 follow setup instructions
 
-1. Sign up for a [free 30 day trial](https://happo.io/signup)
+1. Sign up for a [free 30 day trial](https://happo.io/signup?_aid=802)
 2. [Setup with Cypress](https://docs.happo.io/docs/cypress)
 3. Run visual tests
 4. Run a single visual test using `npm run test:visual`

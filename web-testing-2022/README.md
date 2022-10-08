@@ -35,7 +35,7 @@ You will analyze risks and how to prevent those risks with e2e testing, componen
 - [E2E UI testing w/ Cypress](./docs/E2E-TESTS.md)
 - [Visual e2e testing](./docs/VISUAL.md)
 - Break ☕
-- [CICD](./my-react-app/docs/CICD.md)
+- [CICD](./docs/CICD.md)
 - [Conclusions](./docs/CONCLUSIONS.md)
 
 ## Testing for Good
