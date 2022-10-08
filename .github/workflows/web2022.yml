@@ -36,7 +36,7 @@ jobs:
           start: npm start
           browser: chrome
           command-prefix: npx happo-e2e -- npx
-          project: ./web-testing-2022
+          working-directory: web-testing-2022
         env:
           # Inject secrets to the build
           HAPPO_API_KEY: ${{ secrets.HAPPO_API_KEY }}
