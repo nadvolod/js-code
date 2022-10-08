@@ -32,9 +32,10 @@ jobs:
         run: |
           ls -a
           npm ci
-      - name: Build the app for prod 🏗
+      - name: Start the app
         run: |
-          npm run build && npm run start
+          npm start &
+          npx wait-on --timeout 60000
       - name: Run visual tests 👁
         run: |
           npm run test:visual
