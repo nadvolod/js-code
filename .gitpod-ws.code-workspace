@@ -1,6 +1,5 @@
 {
   "folder": [
-    { "path": "web-testing-2022" },
-    { "path": "api-testing-2022" }
+    { "path": "web-testing-2022" }
   ]
 }
