@@ -27,7 +27,8 @@ You will analyze risks and how to prevent those risks with e2e testing, componen
 
 1. ReactJS
 2. Cypress 10
-3. Happo.io visual testing
+3. Happo.io
+4. cypress-audit
 
 ## Table Of Contents
 
