@@ -45,7 +45,7 @@ jobs:
         #Using npm ci is generally faster than running npm install
         run: |
           ls -a
-          npm ci
+          npm install
       - name: Start the app
         run: |
           npm start &
