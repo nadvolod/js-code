@@ -1,5 +1,7 @@
 # Performance and accessbility testing
 
+## Who knows what front-end performance testing is? Who has tried it?
+
 ## 🏋️‍♀️Follow setup instructions
 
 1. [Install](https://www.npmjs.com/package/cypress-audit)
@@ -51,5 +53,12 @@ describe('The App', () => {
 });
 ```
 
+5. Run tests with
+
+```js
+
+npx cypress run --spec '**/**/perf.cy.js' --browser=chrome --headed
+
+```
 
 Stuck? The solution is [here](https://github.com/nadvolod/js-code/pull/42)
