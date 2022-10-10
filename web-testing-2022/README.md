@@ -14,7 +14,7 @@ You will analyze risks and how to prevent those risks with e2e testing, componen
 
 ✅ Visual testing w/ Cypress 10 and Happo.io
 
-✅ CICD with Github Actions
+✅ Performance and accessibility testing
 
 😉 And maybe more...
 
@@ -35,7 +35,7 @@ You will analyze risks and how to prevent those risks with e2e testing, componen
 - [E2E UI testing w/ Cypress](./docs/E2E-TESTS.md)
 - [Visual e2e testing](./docs/VISUAL.md)
 - Break ☕
-- [CICD](./docs/CICD.md)
+- [CICD](./docs/PERF.md)
 - [Conclusions](./docs/CONCLUSIONS.md)
 
 ## Testing for Good
