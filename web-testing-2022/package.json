@@ -15,7 +15,8 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "cypress": "^10.4.0"
+    "cypress": "^10.4.0",
+    "cypress-audit": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,6 +27,7 @@
     "eject": "react-scripts eject",
     "test:cy:ci": "npx cypress run --spec '**/**/solution.cy.js' --browser=chrome",
     "test:cy:sanity": "npx cypress run --spec '**/**/sanity.cy.js' --browser=chrome",
+    "test:perf": "npx cypress run --spec '**/**/perf.cy.js' --browser=chrome --headed",
     "test:visual": "npx happo-e2e -- npx cypress run --spec 'cypress/e2e/visual.cy.js'",
     "test:sanity": "npm run test:cy:sanity && npm run test:visual"
   },
