@@ -12,7 +12,7 @@ You will analyze risks and how to prevent those risks with e2e testing, componen
 
 ✅ E2E ui tests w/ Cypress 10
 
-✅ Component testing w/ Cypress 10
+✅ Visual testing w/ Cypress 10 and Happo.io
 
 ✅ CICD with Github Actions
 
@@ -27,16 +27,15 @@ You will analyze risks and how to prevent those risks with e2e testing, componen
 
 1. ReactJS
 2. Cypress 10
-3. Github Actions
+3. Happo.io visual testing
 
 ## Table Of Contents
 
 - Setup
-- [API Testing](./docs/API.md)
 - [E2E UI testing w/ Cypress](./docs/E2E-TESTS.md)
-- Break ☕
 - [Visual e2e testing](./docs/VISUAL.md)
-- [CICD](./my-react-app/docs/CICD.md)
+- Break ☕
+- [CICD](./docs/CICD.md)
 - [Conclusions](./docs/CONCLUSIONS.md)
 
 ## Testing for Good
@@ -82,14 +81,12 @@ Anything helps!
 - 😄 Pronouns: he/him
 - ⚡ Fun fact: I'm a vegan that's super pasionate about saving the planet, saving animals, and helping underpriveleged communities
 - 📫 Follow me for testing and dev training
-  - [JS Testing Newsletter](https://ultimateqa.ck.page/js-testing-tips)
+  - [JS Testing Tips Newsletter](https://ultimateqa.ck.page/js-testing-tips)
   - [Testing training on Youtube](https://youtube.com/ultimateqa)
   - [LinkedIn for professional connections](https://www.linkedin.com/in/nikolayadvolodkin/)
-  - [Twitter for 🔥 Dev quotes](https://twitter.com/Nikolay_A00)
+  - [Twitter for 🔥 Dev quotes](https://twitter.com/intent/follow?screen_name=nikolay_a00&region=follow_link)
 
-## TA 1: Chris Eccleston
-
-## TA 2: Aleks Shineleva
+## TA 1
 
 ## ⚙️ Setup
 
@@ -97,29 +94,8 @@ The safest way to ensure that we all have the same environment is for us to [use
 
 ### Sign up for accounts
 
-1. Free [Sauce account](https://saucelabs.com/sign-up)
-
-### Get your username and api key
-
-1. Save your Sauce Labs Username and Access Key by going to the [Sauce Labs user settings page](https://app.saucelabs.com/user-settings)
-
-ℹ️ If you have a Screener.io account then do the step below. Otherwise, just copy one of the demo API Keys.
-  - Save your Screener API Key by going to the [API key](https://screener.io/v2/account/api-key) page in your Screener settings
-     - Need to sign up for [demo account before](https://saucelabs.com/demo-request-vt)
-
-🚨 **If you don't get an API key before the workshop, please use one of the keys below** 🚨
-
-SCREENER_API_KEY:
-
-`34c95634-56fc-446e-b68e-20530262e3f4`
-
-`fe5a0636-fde5-4209-a597-403a76f1b505`
-
-`6b3cc9f4-4578-413c-b5cc-ed7d1b417981`
-
-`6b3cc9f4-4578-413c-b5cc-ed7d1b417981`
-
-`8368adee-4463-4aa4-a441-6e6c58d67665`
+1. Free [Happo.io account](https://happo.io/signup?_aid=802)
+1. Free [Github account](https://github.com/signup)
 
 ---
 
@@ -136,11 +112,9 @@ SCREENER_API_KEY:
 - click the Fork in the upper right of the Github.
 - Give the repo a ⭐ or you can't participate in the workshop😝
 
-3. In the browser address bar, prepend the current GitHub url with `https://gitpod.io/#`
-
-   - The resulting url should look as follows:
-
-     > https://gitpod.io/#https://github.com/YOUR-USERNAME/comprehensive-testing-js
+3. Click here
+     
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/nadvolod/js-code/tree/master/web-testing-2022)
 
 4. Once the Gitpod.io URL is loaded, you will need to sign in with the GitHub account you created earlier
 
@@ -150,26 +124,22 @@ SCREENER_API_KEY:
 
 ### Set your env variables
 
-In a new terminal, run the following commands in that Terminal to set your `SAUCE_USERNAME`, `SAUCE_ACCESS_KEY`, and `SCREENER_API_KEY`:
+In a new terminal, run the following commands in that Terminal to set your `HAPPO_API_KEY`, `HAPPO_API_SECRET`:
+
+[Happo api keys](https://docs.happo.io/docs/configuration#apikey-and-apisecret)
 
 ```bash
-eval $(gp env -e SAUCE_USERNAME=<sauce_username>)
+eval $(gp env -e HAPPO_API_KEY=<key>)
 ```
 ```bash
-eval $(gp env -e SAUCE_ACCESS_KEY=<sauce_access_key>)
+eval $(gp env -e HAPPO_API_SECRET=<secret>)
 ```
-```bash
-eval $(gp env -e SCREENER_API_KEY=<screener_api_key>)
-```
-
-> Replace <sauce_username>, <sauce_access_key>, and <screener_api_key> with your credentials
 
 Once you have run those 3 commands, you can run the following commands to test your environment variables:
 
 ```bash
-echo $SAUCE_USERNAME
-echo $SAUCE_ACCESS_KEY
-echo $SCREENER_API_KEY
+echo $HAPPO_API_KEY
+echo $HAPPO_API_SECRET
 ```
 
 ### ✅ Your values should come back as expected
@@ -181,13 +151,7 @@ Run sanity tests
 If your tests run in US Datacenter
 
 ```bash
-npm run test:sanity:us
-```
-
-If your tests run in EU Datacenter
-
-```bash
-npm run test:sanity:eu
+npm run test:cy:sanity
 ```
 
 ### ✅👏Environment setup is complete if tests passed
@@ -226,41 +190,6 @@ nvm alias default 16.14.x #to set it to the default
 ```bash
 git clone URL_OF_YOUR_FORK
 ```
-
-4. **Navigate to the directory of where you cloned your repo**
-
-```bash
-cd YOUR_FORK_DIR/comprehensive-testing-js
-```
-
-### 3. Install dependencies and start the application
-
-- While inside your 'comprehensive-testing-js' directory, run the following command to install all dependencies
-
-```bash
-npm install
-```
-
-- After the dependency installation has completed, start the application by running the following:
-
-```bash
-npm run start
-```
-
-### 4.Follow the rest of the setup instructions
-
-Follow the [same steps](#Run-tests) for running tests.
-
-ℹ️ The main difference is that you will set environmenta variables by [following these instructions](https://docs.saucelabs.com/basics/environment-variables/#setting-up-environment-variables) depending on your OS.
-
-ℹ️ Some individuals aren't allowed to set their environment variables on their machines (Employer policy). In that case, you can hardcode them by modifying
-
-- [3 visual keys](https://github.com/saucelabs-training/comprehensive-testing-js/blob/9309d16a9cf56dd14607b9e4c478f3b2f698e9d8/wdio.visual.conf.js#L2-L9)
-- [2 keys for functional tests](https://github.com/saucelabs-training/comprehensive-testing-js/blob/9309d16a9cf56dd14607b9e4c478f3b2f698e9d8/wdio.sanity.conf.js#L9-L10)
-
-You will need to hardcode these values as we do exercises.
-
-### 5.Have an IDE installed that can handle NodeJS/JS (We will use [VSCode](https://code.visualstudio.com/Download))
 
 #### ✅👏Congratulations, your local environment is ready!
 

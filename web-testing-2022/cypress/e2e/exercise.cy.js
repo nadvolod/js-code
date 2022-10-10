@@ -6,7 +6,7 @@ describe('Exercise', () => {
 
     //1. Use cy.visit('/') to go to the app url
     //2. Use cy.get('.App-link').should('be.visible') to assert valid state
-    
+
     /** Your code above */
   });
 

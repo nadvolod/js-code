@@ -20,4 +20,6 @@
 
 ✅ We can use Github Workflows for free and easy continuous integration pipelines
 
+[Happo.io cicd docs](https://docs.happo.io/docs/continuous-integration#github)
+
 ## ⏭️[Conclusions](./CONCLUSIONS.md)

@@ -1,0 +1,70 @@
+name: Web testing 2022
+on:
+  push:
+  # Only trigger if files in this path changed
+    paths:
+    - 'web-testing-2022/**'
+    - '.github/workflows/web2022.yml'
+    # Don't run on Markdown changes
+    - '!**.md'
+    branches: [ master, visual_end ]
+  pull_request:
+  # Only trigger if files in this path changed
+    paths:
+    - 'web-testing-2022/**'
+    - '.github/workflows/web2022.yml'
+    # Don't run on Markdown changes
+    - '!**.md'
+    branches: [ master, visual_end ]
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web-testing-2022
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 100
+      - uses: actions/setup-node@v1
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+#       - name: Cypress run
+#         uses: cypress-io/github-action@v4
+#         with:
+#           build: npm run build
+#           start: npm start
+#           browser: chrome
+#           command-prefix: npx happo-e2e -- npx
+#           working-directory: web-testing-2022
+#         env:
+#           # Inject secrets to the build
+#           HAPPO_API_KEY: ${{ secrets.HAPPO_API_KEY }}
+#           HAPPO_API_SECRET: ${{ secrets.HAPPO_API_SECRET }}
+      - name: Install dependencies 📦
+        #Using npm ci is generally faster than running npm install
+        run: |
+          ls -a
+          npm install
+      - name: Start the app
+        run: |
+          npm start &
+          npx wait-on --timeout 60000
+#       - name: Run cypress
+#         uses: cypress-io/github-action@v2
+#         with:
+#           command-prefix: npx happo-e2e -- npx
+#         env:
+#           # Inject secrets to the build
+#           HAPPO_API_KEY: ${{ secrets.HAPPO_API_KEY }}
+#           HAPPO_API_SECRET: ${{ secrets.HAPPO_API_SECRET }}
+#       - name: Run e2e tests
+#         run: |
+#           npm run test:cy:sanity
+      - name: Run visual tests 👁
+        run: |
+          ls -a
+          npm run test:visual
+        env:
+          HAPPO_API_KEY: ${{ secrets.HAPPO_API_KEY }}
+          HAPPO_API_SECRET: ${{ secrets.HAPPO_API_SECRET }}

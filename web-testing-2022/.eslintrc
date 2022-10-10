@@ -6,6 +6,7 @@
   "globals": {
     "cy": true
   },
+  "ignorePatterns": ["node_modules", "dist"],
   // parser not working w/ react
   // "parser": "babel-eslint",
   "parserOptions": {

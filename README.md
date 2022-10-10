@@ -15,6 +15,7 @@ Tons of JavaScript concepts in a single repo!
 - [Test React components using component tests](./testing-js/react-components/test-app/)
 - [Github User Search React App](./github-user-search/)
 - [Modern Web 3.0 Blockchain APp]()
+- [Web testing in 2023](./web-testing-2022) `cypress10` `happoio` `cicd`
 
 ### Concepts
 
