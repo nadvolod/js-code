@@ -7,7 +7,7 @@ on:
     - '.github/workflows/web2022.yml'
     # Don't run on Markdown changes
     - '!**.md'
-    branches: [ master ]
+    branches: [ master, visual_end ]
   pull_request:
   # Only trigger if files in this path changed
     paths:
@@ -15,7 +15,7 @@ on:
     - '.github/workflows/web2022.yml'
     # Don't run on Markdown changes
     - '!**.md'
-    branches: [ master ]
+    branches: [ master, visual_end ]
 jobs:
   build-test:
     runs-on: ubuntu-latest
