@@ -1,11 +1,29 @@
 image:
   file: .gitpod.Dockerfile
-# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
-tasks:
-  - init: npm install
-    command: npm run start
+workspaceLocation: gitpod/gitpod-ws.code-workspace
 
-# List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
   - port: 3000
     onOpen: open-preview
+    visibility: public
+    name: Website
+    description: Preview of Website
+  - port: 5900
+    onOpen: ignore
+    name: VNC
+    description: VNC Server
+  - port: 6080
+    onOpen: ignore
+    name: VNC
+    description: VNC Viewer
+
+# List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/configure/workspaces/tasks/
+tasks:
+  - init: npm install
+    command: npm run dev
+    name: Dev
+  - command: |
+      gp ports await 3000
+      export CYPRESS_BASE_URL=$(gp url 3000)
+      npm run test:cy:sanity
+    name: Test
