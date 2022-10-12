@@ -16,13 +16,13 @@ In this workshop you will learn how to do automated API testing with Cypress 10.
 
 ## 🔧 Prerequisites
 
-1. Knowledge of JavaScript
-2. Basic understanding of JavaScript
+1. Basic understanding of JavaScript
 
 ## 👩‍💻 Technologies you will use
 
 1. Cypress 10
 2. JavaScript
+3. Gitpod
 
 ## Table Of Contents
 
