@@ -34,3 +34,4 @@ tests_output/
 .next/.**
 
 **/coverage/**
+/out/
