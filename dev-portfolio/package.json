@@ -6,6 +6,7 @@
         "dev": "next dev",
         "build": "next build && next export",
         "start": "next start",
+        "test:all": "npx cypress run --spec '**/SocialDetails.*' && npx cypress run --spec '**/homepage.*' && npx happo-e2e -- cypress run --spec 'cypress/**/visual.*'",
         "test:visual": "npx happo-e2e -- cypress run --spec 'cypress/**/visual.*'",
         "test:jest": "jest",
         "test:lighthouse:ci": "npx cypress run --spec '**/homepage.*' --browser=chrome",
