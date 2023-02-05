@@ -48,8 +48,6 @@ jobs:
     - name: Node info
       run: node -v
 
-    - name: __e Dir
-      run: ls /__e
     - name: Cypress e2e tests
       uses: cypress-io/github-action@v5
       with:
