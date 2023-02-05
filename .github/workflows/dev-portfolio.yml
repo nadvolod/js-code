@@ -56,7 +56,4 @@ jobs:
         start: npm run start
         wait-on: "http://localhost:3000"
         working-directory: ./dev-portfolio
-        command: |
-          npm run test:e2e
-          npm run test:lighthouse:ci
-          npm run test:visual
+        command: npm run test:all
