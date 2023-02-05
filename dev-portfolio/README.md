@@ -51,6 +51,8 @@ What about timelineData.js, do we need to write a snapshot test for it?
 
 -   Disable running all of the cypress files for visual tests by using [Cypress --spec](https://docs.cypress.io/guides/guides/command-line#cypress-run)
 
+How do we get the test status to fail if there are failed diffs?
+
 ### functional testing
 
 -   how do we test the links in Projects.js?
