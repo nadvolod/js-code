@@ -63,6 +63,18 @@ What about timelineData.js, do we need to write a snapshot test for it?
 
 Use [npm-check](https://koalatea.io/how-to-update-all-your-npm-packages-at-once)
 
+## Errors
+
+SWC Error
+
+```text
+failed to load SWC binary, see more info here: https://nextjs.org/docs/messages/failed-loading-swc
+```
+
+[SWC Error solutions](https://nextjs.org/docs/messages/failed-loading-swc)
+
+[SWC Solution thread](https://github.com/vercel/next.js/discussions/30468?sort=top)
+
 ## Inspired by
 
 ⭐ Huge thanks to [JS Mastery for the tutorial](https://youtu.be/OPaLnMw2i_0) ⭐
