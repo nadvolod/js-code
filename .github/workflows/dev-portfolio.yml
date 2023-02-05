@@ -48,7 +48,7 @@ jobs:
     - name: Node info
       run: node -v
 
-    - name: Cypress e2e tests
+    - name: Run tests
       uses: cypress-io/github-action@v5
       with:
         browser: chrome
@@ -56,44 +56,7 @@ jobs:
         start: npm run start
         wait-on: "http://localhost:3000"
         working-directory: ./dev-portfolio
-        command: npm run test:e2e
-    - name: Front-end perf tests
-      uses: cypress-io/github-action@v5
-      with:
-        browser: chrome
-        build: npm run build
-        start: npm run start
-        wait-on: "http://localhost:3000"
-        working-directory: ./dev-portfolio
-        command: npm run test:lighthouse:ci
-    - name: Visual tests
-      uses: cypress-io/github-action@v5
-      with:
-        browser: chrome
-        build: npm run build
-        start: npm run start
-        wait-on: "http://localhost:3000"
-        working-directory: ./dev-portfolio
-        command: npm run test:visual
-    # - name: Install dependencies 📦
-    #   #Using npm ci is generally faster than running npm install
-    #   run: |
-    #     ls -a
-    #     npm install --save next@^12.1.0 --include=optional
-    # - name: Build the app for prod 🏗
-    #   run: |
-    #     ls -a
-    #     npm run build
-    # - name: Start app 🚀
-    #   run: |
-    #     npm run start &
-    #     npx wait-on --timeout 60000
-    # - name: Run e2e tests 🧪
-    #   run: |
-    #     npm run test:e2e
-    # - name: Run front-end perf 🏃‍♀️
-    #   run: |
-    #     npm run test:lighthouse:ci
-    # - name: Run visual tests 👁
-    #   run: |
-    #     npm run test:visual
+        command: |
+          npm run test:e2e
+          npm run test:lighthouse:ci
+          npm run test:visual
