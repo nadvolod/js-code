@@ -37,6 +37,14 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Cypress run
+      uses: cypress-io/github-action@v3
+      with:
+        project: ./dev-portfolio
+        browser: chrome
+        build: npm run build
+        start: npm run start
+        wait-on: "http://localhost:3000"
     - name: Install dependencies 📦
       #Using npm ci is generally faster than running npm install
       run: |
@@ -45,7 +53,11 @@ jobs:
     - name: Build the app for prod 🏗
       run: |
         ls -a
-        npm run build && npm run start
+        npm run build
+    - name: Start app 🚀
+      run: |
+        npm run start &
+        npx wait-on --timeout 60000
     - name: Run e2e tests 🧪
       run: |
         npm run test:e2e
