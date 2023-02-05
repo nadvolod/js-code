@@ -23,5 +23,5 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import "happo-cypress";
-import "@cypress-audit/lighthouse/commands";
+import 'cypress-audit/commands'
+import 'happo-cypress'

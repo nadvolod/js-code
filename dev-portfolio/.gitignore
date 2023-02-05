@@ -35,3 +35,4 @@ tests_output/
 
 **/coverage/**
 /out/
+cypress/downloads

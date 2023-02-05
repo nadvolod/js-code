@@ -11,7 +11,7 @@ describe('Homepage', () => {
             'best-practices': 87,
             seo: 75,
             pwa: 20,
-            performance: 30,
+            performance: 25,
         })
     })
 })

@@ -15,18 +15,17 @@
 /**
  * @type {Cypress.PluginConfig}
  */
-const happoTask = require("happo-cypress/task");
-const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
+const happoTask = require('happo-cypress/task')
+const { lighthouse, pa11y, prepareAudit } = require('cypress-audit')
 
 module.exports = (on) => {
-  happoTask.register(on);
-  on("before:browser:launch", (browser = {}, launchOptions) => {
-    prepareAudit(launchOptions);
-  });
+    happoTask.register(on)
+    on('before:browser:launch', (browser = {}, launchOptions) => {
+        prepareAudit(launchOptions)
+    })
 
-  on("task", {
-    lighthouse: lighthouse((lighthouseReport) => {
-      console.log(lighthouseReport); // raw lighthouse reports
-    }),
-  });
-};
+    on('task', {
+        lighthouse: lighthouse(), // calling the function is important
+        pa11y: pa11y(), // calling the function is important
+    })
+}
