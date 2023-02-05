@@ -6,10 +6,13 @@
         "dev": "next dev",
         "build": "next build && next export",
         "start": "next start",
-        "test:visual": "npx happo-e2e -- cypress run --spec 'cypress/integration/visual.spec.js'",
+        "test:all": "npx cypress run --spec '**/SocialDetails.*' && npx happo-e2e -- cypress run --spec 'cypress/**/visual.*'",
+        "test:visual": "npx happo-e2e -- cypress run --spec 'cypress/**/visual.*'",
         "test:jest": "jest",
-        "test.lighthouse.ci": "npx cypress run --spec '**/integration/homepage.spec.js' --browser=chrome",
-        "test.lighthouse": "npx cypress run --spec '**/integration/homepage.spec.js' --browser=chrome --headed",
+        "test:lighthouse:ci": "npx cypress run --spec '**/homepage.*' --browser=chrome",
+        "test:lighthouse": "npx cypress run --spec '**/homepage.*' --browser=chrome --headed",
+        "test:e2e": "npx cypress run --spec '**/SocialDetails.*' --browser=chrome",
+        "test": "npm-run-all test:*",
         "happo": "happo",
         "happo-ci-github-actions": "happo-ci-github-actions"
     },
@@ -27,6 +30,7 @@
         "happo-cypress": "^3.0.1",
         "happo-e2e": "^1.0.3",
         "happo.io": "^7.0.2",
-        "jest": "^27.5.1"
+        "jest": "^27.5.1",
+        "npm-run-all": "^4.1.5"
     }
 }

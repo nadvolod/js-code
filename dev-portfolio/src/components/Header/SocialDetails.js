@@ -1,32 +1,32 @@
-import React from "react";
-import { Div3, SocialIcons } from "./HeaderStyles";
+import React from 'react'
 import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiFillTwitterCircle,
-  AiFillYoutube,
-} from "react-icons/ai";
-import { socialUrls } from "../../constants/socialUrls";
+    AiFillGithub,
+    AiFillLinkedin,
+    AiFillTwitterCircle,
+    AiFillYoutube,
+} from 'react-icons/ai'
+import { socialUrls } from '../../constants/socialUrls'
+import { Div3, SocialIcons } from './HeaderStyles'
 
 const SocialDetails = () => {
-  return (
-    <>
-      <Div3>
-        <SocialIcons data-testid="github" href={socialUrls.github}>
-          <AiFillGithub size="3rem" />
-        </SocialIcons>
-        <SocialIcons data-testid="youtube" href={socialUrls.youtube}>
-          <AiFillYoutube size="3rem" />
-        </SocialIcons>
-        <SocialIcons data-testid="linkedin" href={socialUrls.linkedIn}>
-          <AiFillLinkedin size="3rem" />
-        </SocialIcons>
-        <SocialIcons data-testid="twitter" href={socialUrls.twitter}>
-          <AiFillTwitterCircle size="3rem" />
-        </SocialIcons>
-      </Div3>
-    </>
-  );
-};
+    return (
+        <>
+            <Div3>
+                <SocialIcons data-testid="github" href={socialUrls.github}>
+                    <AiFillGithub size="3rem" />
+                </SocialIcons>
+                <SocialIcons data-testid="youtube" href={socialUrls.youtube}>
+                    <AiFillYoutube size="3rem" />
+                </SocialIcons>
+                <SocialIcons data-testid="twitter" href={socialUrls.twitter}>
+                    <AiFillTwitterCircle size="3rem" />
+                </SocialIcons>
+                <SocialIcons data-testid="linkedin" href={socialUrls.linkedIn}>
+                    <AiFillLinkedin size="3rem" />
+                </SocialIcons>
+            </Div3>
+        </>
+    )
+}
 
-export default SocialDetails;
+export default SocialDetails

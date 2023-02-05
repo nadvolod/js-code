@@ -10,6 +10,16 @@ const projects = [
         id: 0,
     },
     {
+        title: 'Test Automation Experience',
+        description:
+            'Leading YouTube channel for Engineers looking to learn CI/CD, Test Automation, and DevOps.',
+        image: '/images/tae-yt-banner.webp',
+        tags: ['Wordpress', 'Testing', 'Development'],
+        source: 'https://www.youtube.com/@test-automation-experience',
+        visit: 'https://www.youtube.com/@test-automation-experience',
+        id: 5,
+    },
+    {
         title: 'Github User Search',
         description:
             'Created a web application that allows users to search for Github users and see their profile information. Tested and deployed.',
