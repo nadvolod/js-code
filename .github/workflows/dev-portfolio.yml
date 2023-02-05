@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
     - uses: actions/checkout@v2
@@ -49,9 +49,12 @@ jobs:
       run: |
         ls -a
         npm run build && npm run start
-    - name: Run front-end perf
+    - name: Run e2e tests 🧪
       run: |
-        npm run test:lighthouse
+        npm run test:e2e
+    - name: Run front-end perf 🏃‍♀️
+      run: |
+        npm run test:lighthouse:ci
     - name: Run visual tests 👁
       run: |
         npm run test:visual
