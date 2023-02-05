@@ -45,7 +45,7 @@ jobs:
     - name: Build the app for prod 🏗
       run: |
         ls -a
-        npm run build && npm run start
+        npm run build
     - name: Run e2e tests 🧪
       run: |
         npm run test:e2e
