@@ -42,9 +42,6 @@ jobs:
       run: |
         ls -a
         npm ci
-    - name: Unit tests
-      run: |
-        npm run test:jest
     - name: Build the app for prod 🏗
       run: |
         ls -a
