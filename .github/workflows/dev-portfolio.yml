@@ -40,28 +40,28 @@ jobs:
     - name: Cypress run
       uses: cypress-io/github-action@v5
       with:
-        project: ./dev-portfolio
         browser: chrome
         build: npm run build
         start: npm run start
         wait-on: "http://localhost:3000"
         working-directory: ./dev-portfolio
-    - name: Install dependencies 📦
-      #Using npm ci is generally faster than running npm install
-      run: |
-        ls -a
-        npm install --save next@^12.1.0 --include=optional
-    - name: Build the app for prod 🏗
-      run: |
-        ls -a
-        npm run build
-    - name: Start app 🚀
-      run: |
-        npm run start &
-        npx wait-on --timeout 60000
-    - name: Run e2e tests 🧪
-      run: |
-        npm run test:e2e
+        command: npm run test:e2e
+    # - name: Install dependencies 📦
+    #   #Using npm ci is generally faster than running npm install
+    #   run: |
+    #     ls -a
+    #     npm install --save next@^12.1.0 --include=optional
+    # - name: Build the app for prod 🏗
+    #   run: |
+    #     ls -a
+    #     npm run build
+    # - name: Start app 🚀
+    #   run: |
+    #     npm run start &
+    #     npx wait-on --timeout 60000
+    # - name: Run e2e tests 🧪
+    #   run: |
+    #     npm run test:e2e
     - name: Run front-end perf 🏃‍♀️
       run: |
         npm run test:lighthouse:ci
