@@ -37,11 +37,12 @@ jobs:
       # https://github.com/cypress-io/github-action/issues/48
       fail-fast: false
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+        cache: 'npm'
     - name: Cypress info
       run: npx cypress info
 
@@ -50,6 +51,9 @@ jobs:
 
     - name: Run tests
       uses: cypress-io/github-action@v5
+      env:
+        HAPPO_API_KEY: ${{ secrets.HAPPO_API_KEY }}
+        HAPPO_API_SECRET: ${{ secrets.HAPPO_API_SECRET }}
       with:
         browser: chrome
         build: npm run build
