@@ -61,6 +61,10 @@ How do we get the test status to fail if there are failed diffs?
 
 `cy.lighthouse(), Electron is not supported. Skipping...` error was a result of running Cypress on Electron. Changing to Chrome browser fixed the issue.
 
+### CICD
+
+[Cypress github actions yml commands](https://github.com/cypress-io/github-action#env)
+
 ### updating npm packages
 
 Use [npm-check](https://koalatea.io/how-to-update-all-your-npm-packages-at-once)
