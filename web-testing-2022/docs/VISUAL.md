@@ -62,7 +62,6 @@ Test by running `npm run test:visual`
 - Lazy loading
 - Long pages
 
-
 ## 📝Summary
 
 ✅Visual e2e testing is a simple and efficient way to ensure visual consistency cross-platform and cross-OS
